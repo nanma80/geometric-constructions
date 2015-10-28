@@ -1,9 +1,9 @@
-class Point
-  attr_reader :coordinates, :id
+class Point < Entity
+  attr_reader :coordinates
 
   def initialize(coordinates)
+    super
     @coordinates = coordinates.map{|c| c * 1.0}
-    @id = nil
   end
 
   def x
@@ -26,13 +26,5 @@ class Point
     end
 
     true
-  end
-
-  def id=(new_id)
-    if @id.nil?
-      @id = new_id
-    else
-      raise 'id cannot be assigned twice'
-    end
   end
 end

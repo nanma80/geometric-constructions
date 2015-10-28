@@ -1,4 +1,4 @@
-require './geometric-constructions'
+require 'spec_helper'
 
 describe Circle do
   it 'should compute radius' do

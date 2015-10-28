@@ -1,7 +1,8 @@
-class Circle
+class Circle < Entity
   attr_reader :center, :radius
 
   def initialize(center, point)
+    super
     @center = center
     @radius = get_radius(point)
   end

@@ -1,7 +1,8 @@
-class Line
+class Line < Entity
   attr_reader :normal_form
 
   def initialize(points)
+    super
     @points = points
     @normal_form = get_normal_form(points)
   end

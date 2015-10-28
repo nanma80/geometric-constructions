@@ -1,4 +1,4 @@
-require './geometric-constructions'
+require 'spec_helper'
 
 describe Point do
   it 'should use real coordinates' do
@@ -14,13 +14,5 @@ describe Point do
 
     expect(point1).to eq point2
     expect(point1).not_to eq point3
-  end
-
-  it 'should accept id once' do
-    point = Point.new([1, 0])
-    point.id = 3
-
-    expect(point.id).to eql 3
-    expect{ point.id = 4 }.to raise_error RuntimeError
   end
 end

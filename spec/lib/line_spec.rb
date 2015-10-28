@@ -1,4 +1,4 @@
-require './geometric-constructions'
+require 'spec_helper'
 
 describe Line do
   it 'should compute normal form' do
