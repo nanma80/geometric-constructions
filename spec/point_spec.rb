@@ -12,8 +12,8 @@ describe Point do
     point2 = Point.new([2/2, 1-1])
     point3 = Point.new([1.00001, 0])
 
-    expect(point1.equals?(point2)).to be true
-    expect(point1.equals?(point3)).to be false
+    expect(point1).to eq point2
+    expect(point1).not_to eq point3
   end
 
   it 'should accept id once' do
@@ -23,5 +23,4 @@ describe Point do
     expect(point.id).to eql 3
     expect{ point.id = 4 }.to raise_error RuntimeError
   end
-
 end

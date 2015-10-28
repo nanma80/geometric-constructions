@@ -14,13 +14,13 @@ class Point
     coordinates[1]
   end
 
-  def equals?(that)
+  def ==(that)
     unless that.is_a?(Point)
       raise "Comparing #{that.inspect} to a point"
     end
 
     coordinates.each_with_index do |c, index|
-      if (c - that.coordinates[index]).abs > GeometricConstructions::EPSILON
+      if (c - that.coordinates[index]).abs > EPSILON
         return false
       end
     end
