@@ -13,12 +13,4 @@ class Entity
       raise 'id cannot be assigned twice'
     end
   end
-
-  def definition=(definition)
-    if @definition.empty?
-      @definition = definition
-    else
-      raise 'definition cannot be assigned twice'
-    end
-  end
 end

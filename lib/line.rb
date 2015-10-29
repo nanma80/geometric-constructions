@@ -5,6 +5,7 @@ class Line < Entity
     super
     @points = points
     @normal_form = get_normal_form(points)
+    definition[:passing] = points
   end
 
   def origin_distance
@@ -21,6 +22,31 @@ class Line < Entity
     end
 
     Point.new(normal_form) == Point.new(that.normal_form)
+  end
+
+  def intersection_with_line(that)
+    if self == that
+      raise 'Cannot find intersection with the same line'
+    end
+
+    p1 = origin_distance
+    p2 = that.origin_distance
+    a1 = norm_direction
+    a2 = that.norm_direction
+    a12 = a1 - a2
+
+    parallel_intersection = []
+
+    if Math.sin(a12).abs < EPSILON
+      return parallel_intersection
+    end
+
+    inter_x = (p2 * Math.sin(a1) - p1 * Math.sin(a2))/Math.sin(a12)
+    inter_y = (p2 * Math.cos(a1) - p1 * Math.cos(a2))/Math.sin(- a12)
+
+    intersection = Point.new([inter_x, inter_y])
+    intersection.definition[:intersection] = [self, that]
+    [intersection]
   end
 
   def get_normal_form(points)
@@ -53,9 +79,10 @@ class Line < Entity
 
     cos = a * divisor
     sin = b * divisor
+    
     alpha = Math.acos(cos)
     if sin < 0
-      alpha += Math::PI
+      alpha = 2 * Math::PI - alpha
     end
 
     [alpha, p]

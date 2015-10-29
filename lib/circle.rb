@@ -5,6 +5,8 @@ class Circle < Entity
     super
     @center = center
     @radius = get_radius(point)
+    definition[:centered] = [ center ]
+    definition[:passing] = [ point ]
   end
 
   def ==(that)

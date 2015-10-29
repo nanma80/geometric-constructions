@@ -26,4 +26,44 @@ describe Line do
     expect(l1).to eq l2
     expect(l1).not_to eq l3
   end
+
+  it 'should store definition' do
+    p1 = Point.new([-2, 0])
+    p2 = Point.new([0, 2])
+    l1 = Line.new([p1, p2])
+
+    expect(l1.definition[:passing]).to eq [p1, p2]
+  end
+
+  it 'should not find intersection with itself' do
+    p1 = Point.new([-2, 0])
+    p2 = Point.new([0, 2])
+    l1 = Line.new([p1, p2])
+    l2 = Line.new([p2, p1])
+
+    expect{ l1.intersection_with_line(l2) }.to raise_error RuntimeError
+  end
+
+  it 'should find empty intersection for parallel lines' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    l2 = Line.new([Point.new([-1, 0]), Point.new([0, -1])])
+    l3 = Line.new([Point.new([2, 0]), Point.new([0, 2])])
+    l4 = Line.new([Point.new([-1, 1]), Point.new([1, -1])])
+
+    expect(l1.intersection_with_line(l2)).to eq []
+    expect(l1.intersection_with_line(l3)).to eq []
+    expect(l1.intersection_with_line(l4)).to eq []
+    expect(l4.intersection_with_line(l2)).to eq []
+  end
+
+  it 'should find intersection' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    l2 = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    l3 = Line.new([Point.new([-1, 0]), Point.new([3, 0])])
+
+    expect(l1.intersection_with_line(l2)).to eq [Point.new([0.5, 0.5])]
+    expect(l1.intersection_with_line(l3)).to eq [Point.new([1, 0])]
+    expect(l3.intersection_with_line(l2)).to eq [Point.new([0, 0])]
+  end
+
 end
