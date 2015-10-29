@@ -66,4 +66,11 @@ describe Line do
     expect(l3.intersection_with_line(l2)).to eq [Point.new([0, 0])]
   end
 
+  it 'should find complicated intersection' do
+    l1 = Line.new([Point.new([2, 0]), Point.new([0, 4])])
+    l2 = Line.new([Point.new([0, 0]), Point.new([0.5, 1])])
+
+    expect(l1.intersection_with_line(l2)).to eq [Point.new([1, 2])]
+  end
+
 end
