@@ -44,6 +44,28 @@ describe Line do
     expect{ l1.intersection_with_line(l2) }.to raise_error RuntimeError
   end
 
+  it 'should find no intersection with a circle' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    c1 = Circle.new(Point.new([3, 0]), Point.new([3, 0.75]))
+    expect(l1.intersection_with_circle(c1)).to eq []
+  end
+
+  it 'should find tangent point between a line and a circle' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    c1 = Circle.new(Point.new([1, 1]), Point.new([1, 1 + Math.sqrt(0.5)]))
+    expect(l1.intersection_with_circle(c1)).to eq [Point.new([0.5, 0.5])]
+  end
+
+  it 'should find intersections between a line and a circle' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([-1, 2])])
+    c1 = Circle.new(Point.new([1, 1]), Point.new([1, 2]))
+    p1 = Point.new([0, 1])
+    p2 = Point.new([1, 0])
+    
+    expect(l1.intersection_with_circle(c1).sort{|point| point.x}).to eq [p1, p2]
+    expect(c1.intersection_with_line(l1).sort{|point| point.x}).to eq [p1, p2]
+  end
+
   it 'should find empty intersection for parallel lines' do
     l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
     l2 = Line.new([Point.new([-1, 0]), Point.new([0, -1])])
@@ -56,7 +78,7 @@ describe Line do
     expect(l4.intersection_with_line(l2)).to eq []
   end
 
-  it 'should find intersection' do
+  it 'should find intersection with a line' do
     l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
     l2 = Line.new([Point.new([0, 0]), Point.new([1, 1])])
     l3 = Line.new([Point.new([-1, 0]), Point.new([3, 0])])
@@ -66,7 +88,7 @@ describe Line do
     expect(l3.intersection_with_line(l2)).to eq [Point.new([0, 0])]
   end
 
-  it 'should find complicated intersection' do
+  it 'should find complicated intersection with a line' do
     l1 = Line.new([Point.new([2, 0]), Point.new([0, 4])])
     l2 = Line.new([Point.new([0, 0]), Point.new([0.5, 1])])
 

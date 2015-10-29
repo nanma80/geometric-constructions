@@ -24,6 +24,36 @@ class Line < Entity
     Point.new(normal_form) == Point.new(that.normal_form)
   end
 
+  def intersection_with_circle(circle)
+    a = Math.cos(norm_direction)
+    b = Math.sin(norm_direction)
+    c = origin_distance - a * circle.center.x - b * circle.center.y
+    r = circle.radius
+    delta = r * r * (a * a + b * b) - c * c
+
+    if delta < - EPSILON
+      return []
+    elsif delta.abs < EPSILON
+      tangent_x = a * c / (a * a + b * b) + circle.center.x
+      tangent_y = b * c / (a * a + b * b) + circle.center.y
+      tangent = Point.new([tangent_x, tangent_y])
+      tangent.definition[:intersection] = [self, circle]
+      return [tangent]
+    else
+      sqrt_delta = Math.sqrt(delta)
+      x1 = (a * c + b * sqrt_delta) / (a * a + b * b) + circle.center.x
+      x2 = (a * c - b * sqrt_delta) / (a * a + b * b) + circle.center.x
+      y1 = (b * c - a * sqrt_delta) / (a * a + b * b) + circle.center.y
+      y2 = (b * c + a * sqrt_delta) / (a * a + b * b) + circle.center.y
+
+      p1 = Point.new([x1, y1])
+      p2 = Point.new([x2, y2])
+      p1.definition[:intersection] = [self, circle]
+      p2.definition[:intersection] = [self, circle]
+      return [p1, p2]
+    end
+  end
+
   def intersection_with_line(that)
     if self == that
       raise 'Cannot find intersection with the same line'
