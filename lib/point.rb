@@ -27,4 +27,17 @@ class Point < Entity
 
     true
   end
+
+  def find_same(layout)
+    layout.points.each do |point|
+      if self == point
+        return point
+      end
+    end
+    nil
+  end
+
+  def is_new?(layout)
+    find_same(layout).nil?
+  end
 end

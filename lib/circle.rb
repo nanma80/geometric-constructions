@@ -65,4 +65,17 @@ class Circle < Entity
 
     Math.sqrt(dx * dx + dy * dy)
   end
+
+  def find_same(layout)
+    layout.circles.each do |circle|
+      if self == circle
+        return circle
+      end
+    end
+    nil
+  end
+
+  def is_new?(layout)
+    find_same(layout).nil?
+  end
 end

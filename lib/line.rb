@@ -117,5 +117,17 @@ class Line < Entity
 
     [alpha, p]
   end
-end
 
+  def find_same(layout)
+    layout.lines.each do |line|
+      if self == line
+        return line
+      end
+    end
+    nil
+  end
+
+  def is_new?(layout)
+    find_same(layout).nil?
+  end
+end
