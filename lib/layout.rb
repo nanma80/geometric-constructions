@@ -39,6 +39,30 @@ class Layout
     end
   end
 
+  def add_entity(new_entity)
+    lines.each do |line|
+      new_entity.intersection_with_line(line).each do |point|
+        next unless point.is_new?(self)
+        points << point
+      end
+    end
+
+    circles.each do |circle|
+      new_entity.intersection_with_circle(circle).each do |point|
+        next unless point.is_new?(self)
+        points << point
+      end
+    end
+
+    if new_entity.is_a?(Circle)
+      circles << new_entity
+    elsif new_entity.is_a?(Line)
+      lines << new_entity
+    else
+      raise "Cannot add #{new_entity.inspect} to layout"
+    end
+  end
+
   def each_outcome(move)
     case move
     when :circle
@@ -46,22 +70,7 @@ class Layout
         dup_layout = dup
         new_circle = Circle.new(points[0], points[1])
         next unless new_circle.is_new?(dup_layout)
-
-        dup_layout.lines.each do |line|
-          line.intersection_with_circle(new_circle).each do |point|
-            next unless point.is_new?(dup_layout)
-            dup_layout.points << point
-          end
-        end
-
-        dup_layout.circles.each do |circle|
-          circle.intersection_with_circle(new_circle).each do |point|
-            next unless point.is_new?(dup_layout)
-            dup_layout.points << point
-          end
-        end
-
-        dup_layout.circles << new_circle
+        dup_layout.add_entity(new_circle)
         yield dup_layout
       end
     when :line
@@ -69,22 +78,7 @@ class Layout
         dup_layout = dup
         new_line = Line.new(points)
         next unless new_line.is_new?(dup_layout)
-
-        dup_layout.lines.each do |line|
-          line.intersection_with_line(new_line).each do |point|
-            next unless point.is_new?(dup_layout)
-            dup_layout.points << point
-          end
-        end
-
-        dup_layout.circles.each do |circle|
-          circle.intersection_with_line(new_line).each do |point|
-            next unless point.is_new?(dup_layout)
-            dup_layout.points << point
-          end
-        end
-
-        dup_layout.lines << new_line
+        dup_layout.add_entity(new_line)
         yield dup_layout
       end
     else
