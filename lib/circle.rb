@@ -5,8 +5,12 @@ class Circle < Entity
     super
     @center = center
     @radius = get_radius(point)
-    definition[:centered] = [ center ]
-    definition[:passing] = [ point ]
+    definition[:is_centered_at] = [ center ]
+    definition[:passes] = [ point ]
+  end
+
+  def description
+    "Center: (#{center.x}, #{center.y}). Radius: #{radius}"
   end
 
   def ==(that)
@@ -41,7 +45,7 @@ class Circle < Entity
       tangent_x = a * c / (a * a + b * b) + x1
       tangent_y = b * c / (a * a + b * b) + y1
       tangent = Point.new([tangent_x, tangent_y])
-      tangent.definition[:intersection] = [self, that]
+      tangent.definition[:is_intersection_of] = [self, that]
       return [tangent]
     else
       sqrt_delta = Math.sqrt(delta)
@@ -52,8 +56,8 @@ class Circle < Entity
 
       p1 = Point.new([inter_x1, inter_y1])
       p2 = Point.new([inter_x2, inter_y2])
-      p1.definition[:intersection] = [self, that]
-      p2.definition[:intersection] = [self, that]
+      p1.definition[:is_intersection_of] = [self, that]
+      p2.definition[:is_intersection_of] = [self, that]
       return [p1, p2]
     end
   end

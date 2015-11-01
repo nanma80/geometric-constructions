@@ -6,6 +6,10 @@ class Point < Entity
     @coordinates = coordinates.map{|c| c * 1.0}
   end
 
+  def description
+    "Coordinates: (#{x}, #{y})"
+  end
+
   def x
     coordinates[0]
   end

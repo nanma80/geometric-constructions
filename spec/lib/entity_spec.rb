@@ -1,18 +1,20 @@
 require 'spec_helper'
 
 describe Entity do
-  it 'should accept id once' do
+  it 'should set id' do
     point = Entity.new
-    point.id = 3
+    point.set_id
+    expect(point.id).to eql 0
 
-    expect(point.id).to eql 3
-    expect{ point.id = 4 }.to raise_error RuntimeError
+    line = Entity.new
+    line.set_id
+    expect(line.id).to eql 1
   end
 
   it 'should accept definition' do
     point = Entity.new
-    point.definition[:intersection] = [1, 2]
+    point.definition[:is_intersection_of] = [1, 2]
 
-    expect(point.definition[:intersection]).to eql [1, 2]
+    expect(point.definition[:is_intersection_of]).to eql [1, 2]
   end
 end

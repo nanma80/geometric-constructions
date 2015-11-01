@@ -32,7 +32,7 @@ describe Line do
     p2 = Point.new([0, 2])
     l1 = Line.new([p1, p2])
 
-    expect(l1.definition[:passing]).to eq [p1, p2]
+    expect(l1.definition[:passes]).to eq [p1, p2]
   end
 
   it 'should not find intersection with itself' do

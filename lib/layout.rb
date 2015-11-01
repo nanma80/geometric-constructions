@@ -12,7 +12,7 @@ class Layout
   def set_predefined
     [@points, @lines, @circles].each do |group|
       group.each do |entity|
-        entity.definition[:predefined] = true
+        entity.definition[:is_predefined] = []
       end
     end
   end
@@ -31,11 +31,11 @@ class Layout
   end
 
   def print(targets)
-    puts self
     puts "Layout has #{points.length} points; #{lines.length} lines; #{circles.length} circles"
     targets.each do |target|
       target_in_layout = target.find_same(self)
-      pp target_in_layout.definition
+      target_in_layout.print
+      puts "#{target_in_layout.class} \##{target_in_layout.id} is a target"
     end
   end
 

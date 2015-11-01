@@ -5,7 +5,11 @@ class Line < Entity
     super
     @points = points
     @normal_form = get_normal_form(points)
-    definition[:passing] = points
+    definition[:passes] = points
+  end
+
+  def description
+    "Norm direction: #{norm_direction * 180/Math::PI}. Distance to origin: #{origin_distance}"
   end
 
   def origin_distance
@@ -37,7 +41,7 @@ class Line < Entity
       tangent_x = a * c / (a * a + b * b) + circle.center.x
       tangent_y = b * c / (a * a + b * b) + circle.center.y
       tangent = Point.new([tangent_x, tangent_y])
-      tangent.definition[:intersection] = [self, circle]
+      tangent.definition[:is_intersection_of] = [self, circle]
       return [tangent]
     else
       sqrt_delta = Math.sqrt(delta)
@@ -48,8 +52,8 @@ class Line < Entity
 
       p1 = Point.new([x1, y1])
       p2 = Point.new([x2, y2])
-      p1.definition[:intersection] = [self, circle]
-      p2.definition[:intersection] = [self, circle]
+      p1.definition[:is_intersection_of] = [self, circle]
+      p2.definition[:is_intersection_of] = [self, circle]
       return [p1, p2]
     end
   end
@@ -75,7 +79,7 @@ class Line < Entity
     inter_y = (p2 * Math.cos(a1) - p1 * Math.cos(a2))/Math.sin(- a12)
 
     intersection = Point.new([inter_x, inter_y])
-    intersection.definition[:intersection] = [self, that]
+    intersection.definition[:is_intersection_of] = [self, that]
     [intersection]
   end
 
