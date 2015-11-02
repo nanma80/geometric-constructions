@@ -134,4 +134,10 @@ class Line < Entity
   def is_new?(layout)
     find_same(layout).nil?
   end
+
+  def self.perp_bis
+    
+  end
+
+
 end

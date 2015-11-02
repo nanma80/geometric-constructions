@@ -95,4 +95,10 @@ describe Line do
     expect(l1.intersection_with_line(l2)).to eq [Point.new([1, 2])]
   end
 
+  it 'should create perpendicular bisector' do
+    l1 = Line.perp_bis([Point.new([0, 0]), Point.new([1, 1])])
+    l2 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+
+    expect(l1).to eq l2
+  end
 end
