@@ -15,7 +15,10 @@ class Task
       new_layouts = []
       layouts.each do |layout|
         layout.each_outcome(move) do |outcome|
-          new_layouts << outcome
+          if outcome.is_new?(new_layouts)
+            new_layouts << outcome
+          end
+
           if outcome.contains?(targets)
             puts "Found a solution"
             return outcome

@@ -2,11 +2,61 @@ require 'pp'
 
 class Layout
   attr_reader :points, :lines, :circles
+  SORTING_FACTOR = Math::E
 
   def initialize(points = nil, lines = nil, circles = nil)
     @points = points || []
     @lines = lines || []
     @circles = circles || []
+  end
+
+  def add_point(point)
+    @points << point
+    @points.sort_by! { |pt| pt.x * SORTING_FACTOR + pt.y }
+  end
+
+  def add_line(line)
+    @lines << line
+    @lines.sort_by! { |l| l.norm_direction * SORTING_FACTOR + l.origin_distance }
+  end
+
+  def add_circle(circle)
+    @circles << circle
+    @circles.sort_by! { |c| c.radius * SORTING_FACTOR * SORTING_FACTOR + c.center.x * SORTING_FACTOR + c.center.y }
+  end
+
+  def is_new?(layouts)
+    layouts.each do |layout|
+      if layout == self
+        return false
+      end
+    end
+    true
+  end
+
+  def ==(that)
+    unless that.is_a?(Layout)
+      raise "Comparing #{that.inspect} to a layout"
+    end
+
+    [
+      [points, that.points],
+      [lines, that.lines],
+      [circles, that.circles]
+    ].each do |pair|
+      if pair[0].length != pair[1].length
+        return false
+      end
+
+      pair[0].each_with_index do |entity, index|
+        that_entity = pair[1][index]
+        unless entity == that_entity
+          return false
+        end
+      end
+    end
+
+    true
   end
 
   def set_predefined
@@ -43,21 +93,21 @@ class Layout
     lines.each do |line|
       new_entity.intersection_with_line(line).each do |point|
         next unless point.is_new?(self)
-        points << point
+        add_point(point)
       end
     end
 
     circles.each do |circle|
       new_entity.intersection_with_circle(circle).each do |point|
         next unless point.is_new?(self)
-        points << point
+        add_point(point)
       end
     end
 
     if new_entity.is_a?(Circle)
-      circles << new_entity
+      add_circle(new_entity)
     elsif new_entity.is_a?(Line)
-      lines << new_entity
+      add_line(new_entity)
     else
       raise "Cannot add #{new_entity.inspect} to layout"
     end
