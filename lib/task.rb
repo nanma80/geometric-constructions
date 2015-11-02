@@ -10,20 +10,19 @@ class Task
 
   def solve
     layouts = [ initial_layout ]
-    moves.each do |move|
+    moves.each_with_index do |move, move_index|
+      puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
       new_layouts = []
       layouts.each do |layout|
         layout.each_outcome(move) do |outcome|
           new_layouts << outcome
+          if outcome.contains?(targets)
+            puts "Found a solution"
+            return outcome
+          end
         end
       end
       layouts = new_layouts
-    end
-
-    layouts.each do |layout|
-      if layout.contains?(targets)
-        return layout
-      end
     end
 
     puts "Cannot find any layout containing targets"

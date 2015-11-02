@@ -10,25 +10,33 @@ class Entity
   def description
   end
 
+  def is_predefined?
+    definition.has_key?(:is_predefined)
+  end
+
   def print
     predicate = ''
 
-    definition.each do |verb, entities|
-      unless predicate.empty?
-        predicate += ' and'
-      end
-      predicate += " #{verb.to_s.gsub(/_/, ' ')}"
+    if is_predefined?
+      predicate = ' is predefined'
+    else
+      definition.each do |verb, entities|
+        unless predicate.empty?
+          predicate += ' and'
+        end
+        predicate += " #{verb.to_s.gsub(/_/, ' ')}"
 
-      entities_strings = []
-      entities.each do |entity|
-        if entity.id.nil?
-          entity.print
+        entities_strings = []
+        entities.each do |entity|
+          if !definition.has_key?(:is_predefined) && entity.id.nil?
+            entity.print
+          end
+
+          entities_strings << " #{entity.class} \##{entity.id}"
         end
 
-        entities_strings << " #{entity.class} \##{entity.id}"
+        predicate += entities_strings.join(',')
       end
-
-      predicate += entities_strings.join(',')
     end
 
     set_id
