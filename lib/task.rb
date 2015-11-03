@@ -11,11 +11,18 @@ class Task
   def solve
     layouts = [ initial_layout ]
     moves.each_with_index do |move, move_index|
+      is_last_move = (move_index == moves.length - 1)
       puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
       new_layouts = []
-      layouts.each do |layout|
+      layouts.each_with_index do |layout, layout_index|
+        if layout_index % 100 == 0
+          puts "Processed #{layout_index}/#{layouts.length} layouts in this round"
+        end
         layout.each_outcome(move) do |outcome|
-          new_layouts << outcome
+          unless is_last_move
+            new_layouts << outcome
+          end
+          
           if outcome.contains?(targets)
             puts "Found a solution"
             return outcome
