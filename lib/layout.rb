@@ -81,6 +81,14 @@ class Layout
         dup_layout.add_entity(new_line)
         yield dup_layout
       end
+    when :perp_bis
+      @points.permutation(2).each do |points|
+        dup_layout = dup
+        new_line = Line.perp_bis(points)
+        next unless new_line.is_new?(dup_layout)
+        dup_layout.add_entity(new_line)
+        yield dup_layout
+      end
     else
       raise "#{move} is not supported"
     end

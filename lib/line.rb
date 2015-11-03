@@ -1,11 +1,18 @@
 class Line < Entity
   attr_reader :normal_form
 
-  def initialize(points)
+  def initialize(params)
     super
-    @points = points
-    @normal_form = get_normal_form(points)
-    definition[:passes] = points
+    if params.length == 2
+      points = params
+      @points = points
+      @normal_form = get_normal_form(points)
+      definition[:passes] = points
+    elsif params.length == 3
+      @normal_form = get_normal_form_from_abc(params[0], params[1], params[2])
+    else
+      raise "Unkown expected params #{params}"
+    end
   end
 
   def description
@@ -83,22 +90,7 @@ class Line < Entity
     [intersection]
   end
 
-  def get_normal_form(points)
-    p1 = points.first
-    p2 = points.last
-
-    raise if p1 == p2
-
-    x1 = p1.x
-    x2 = p2.x
-    y1 = p1.y
-    y2 = p2.y
-
-    a = y2 - y1
-    b = x1 - x2
-
-    c = a * x1 + b * y1
-
+  def get_normal_form_from_abc(a, b, c)
     if (c.abs < EPSILON)
       p = 0.0
       if (a.abs < EPSILON)
@@ -122,6 +114,26 @@ class Line < Entity
     [alpha, p]
   end
 
+
+  def get_normal_form(points)
+    p1 = points.first
+    p2 = points.last
+
+    raise if p1 == p2
+
+    x1 = p1.x
+    x2 = p2.x
+    y1 = p1.y
+    y2 = p2.y
+
+    a = y2 - y1
+    b = x1 - x2
+
+    c = a * x1 + b * y1
+
+    get_normal_form_from_abc(a, b, c)
+  end
+
   def find_same(layout)
     layout.lines.each do |line|
       if self == line
@@ -135,8 +147,20 @@ class Line < Entity
     find_same(layout).nil?
   end
 
-  def self.perp_bis
-    
+  def self.perp_bis(points)
+    p1 = points[0]
+    p2 = points[1]
+    x1 = p1.x
+    y1 = p1.y
+    x2 = p2.x
+    y2 = p2.y
+    a = 2 * (x1 - x2)
+    b = 2 * (y1 - y2)
+    c = - (x2 * x2 + y2 * y2 - x1 * x1 - y1 * y1)
+
+    line = Line.new([a, b, c])
+    line.definition[:is_perpendicular_bisector_of] = points
+    line
   end
 
 
