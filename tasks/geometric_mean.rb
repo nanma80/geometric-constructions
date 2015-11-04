@@ -8,17 +8,16 @@ left_point = Point.new([- short, 0])
 right_point = Point.new([long, 0])
 horizontal_line = Line.new([center_point, left_point])
 
-theta = 86 * Math::PI / 180
+theta = 34 * Math::PI / 180
 up_point = Point.new([geo_mean * Math.cos(theta), geo_mean * Math.sin(theta)])
 line2 = Line.new([center_point, up_point])
 
 initial_layout = Layout.new([center_point, left_point, right_point], [horizontal_line, line2], [])
-# targets = [up_point]
+targets = [up_point]
 
+# targets = Line.perp_bis([right_point, center_point]).intersection_with_line(Line.perp_bis([right_point, up_point]))
 
-targets = Line.perp_bis([right_point, center_point]).intersection_with_line(Line.perp_bis([right_point, up_point]))
-
-steps = [:circle, :circle, :circle, :line]
+steps = [:circle, :circle, :circle, :line, :circle]
 
 task = Task.new(initial_layout, targets, steps)
 
