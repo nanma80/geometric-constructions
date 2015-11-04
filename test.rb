@@ -1,34 +1,24 @@
 require './geometric-constructions'
 
-ratio = 1.7
-distance1 = 1.0
-radius1 = 0.0333
-center1 = Point.new([distance1, 0])
-center2 = Point.new([distance1 * ratio, 0])
+short = 1.0
+long = 2.23
+geo_mean = Math.sqrt(short * long)
+center_point = Point.new([0, 0])
+left_point = Point.new([- short, 0])
+right_point = Point.new([long, 0])
+horizontal_line = Line.new([center_point, left_point])
 
-top1 = Point.new([distance1, radius1])
-top2 = Point.new([distance1 * ratio, radius1 * ratio])
+theta = 86 * Math::PI / 180
+up_point = Point.new([geo_mean * Math.cos(theta), geo_mean * Math.sin(theta)])
+line2 = Line.new([center_point, up_point])
 
-circle1 = Circle.new(center1, top1)
-circle2 = Circle.new(center2, top2)
-
-theta = Math.asin(radius1/distance1)
-tangent_line = Line.new([Point.new([0, 0]), Point.new([Math.cos(theta), Math.sin(theta)])])
-# tangent_point = tangent_line.intersection_with_circle(circle1).first
-
-initial_layout = Layout.new([center1, center2], [], [circle1, circle2])
-
-horizontal_line = Line.new([center1, center2])
-vertical_line = Line.perp_bis([center1, center2])
-
-# target_center = horizontal_line.intersection_with_line(vertical_line).first
-targets = [tangent_line]
-
-initial_layout.add_entity(horizontal_line)
-initial_layout.add_entity(vertical_line)
+initial_layout = Layout.new([center_point, left_point, right_point], [horizontal_line, line2], [])
+# targets = [up_point]
 
 
-steps = [:perp_bis, :circle, :circle, :line]
+targets = Line.perp_bis([right_point, center_point]).intersection_with_line(Line.perp_bis([right_point, up_point]))
+
+steps = [:circle, :circle, :circle, :line]
 
 task = Task.new(initial_layout, targets, steps)
 
