@@ -32,6 +32,10 @@ class Point < Entity
     true
   end
 
+  def on_line?(line)
+    (x * Math.cos(line.norm_direction) + y * Math.sin(line.norm_direction) - line.origin_distance).abs < EPSILON
+  end
+
   def find_same(layout)
     layout.points.each do |point|
       if self == point

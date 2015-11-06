@@ -35,6 +35,10 @@ class Line < Entity
     Point.new(normal_form) == Point.new(that.normal_form)
   end
 
+  def contains?(point)
+    point.on_line?(self)
+  end
+
   def intersection_with_circle(circle)
     a = Math.cos(norm_direction)
     b = Math.sin(norm_direction)
