@@ -167,5 +167,30 @@ class Line < Entity
     line
   end
 
+  def self.perp(original_line, point)
+    theta = original_line.norm_direction + Math::PI / 2
+    a = Math.cos(theta)
+    b = Math.sin(theta)
+    c = a * point.x + b * point.y
+
+    line = Line.new([a, b, c])
+    line.definition[:is_perpendicular_to] = [ original_line ]
+    line.definition[:passes] = [ point ]
+    line
+  end
+
+  def self.parallel(original_line, point)
+    raise if point.on_line?(original_line)
+    
+    theta = original_line.norm_direction
+    a = Math.cos(theta)
+    b = Math.sin(theta)
+    c = a * point.x + b * point.y
+
+    line = Line.new([a, b, c])
+    line.definition[:is_parallel_to] = [ original_line ]
+    line.definition[:passes] = [ point ]
+    line
+  end
 
 end

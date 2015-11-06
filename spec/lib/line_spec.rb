@@ -109,5 +109,34 @@ describe Line do
     expect(l1).to eq l2
   end
 
+  it 'should create a perpendicular line - example 1' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([1, 0])
+    perpendicular = Line.new([Point.new([1, 0]), Point.new([0, 1])])
 
+    expect(Line.perp(line, point)).to eq perpendicular
+  end
+
+  it 'should create a perpendicular line - example 2' do
+    line = Line.new([Point.new([0, 0]), Point.new([3, 4])])
+    point = Point.new([0, 0])
+    perpendicular = Line.new([Point.new([0, 0]), Point.new([-4, 3])])
+
+    expect(Line.perp(line, point)).to eq perpendicular
+  end
+
+  it 'should create parallel line' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([1, 0])
+    parallel = Line.new([Point.new([1, 0]), Point.new([2, 1])])
+
+    expect(Line.parallel(line, point)).to eq parallel
+  end
+
+  it 'should not create parallel line when point is in the line' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([0.5, 0.5])
+
+    expect{ Line.parallel(line, point) }.to raise_error
+  end
 end
