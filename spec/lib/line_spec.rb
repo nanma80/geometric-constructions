@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Line do
   it 'should compute normal form' do
     p1 = Point.new([-2, 0])
-    p2 = Point.new([0, 2])
+    p2 = Point.new([10.0**(-15), 2])
     p3 = Point.new([0, 0])
     p4 = Point.new([-2, 2])
     

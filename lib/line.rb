@@ -107,7 +107,7 @@ class Line < Entity
     sin = b * divisor
     
     alpha = Math.acos(cos)
-    if sin < 0
+    if sin < - EPSILON
       alpha = 2 * Math::PI - alpha
     end
 
