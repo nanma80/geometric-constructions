@@ -89,6 +89,27 @@ class Layout
         dup_layout.add_entity(new_line)
         yield dup_layout
       end
+    when :perp
+      @lines.each do |line|
+        @points.each do |point|
+          dup_layout = dup
+          new_line = Line.perp(line, point)
+          next unless new_line.is_new?(dup_layout)
+          dup_layout.add_entity(new_line)
+          yield dup_layout
+        end
+      end
+    when :parallel
+      @lines.each do |line|
+        @points.each do |point|
+          next if point.on_line?(line)
+          dup_layout = dup
+          new_line = Line.parallel(line, point)
+          next unless new_line.is_new?(dup_layout)
+          dup_layout.add_entity(new_line)
+          yield dup_layout
+        end
+      end
     else
       raise "#{move} is not supported"
     end

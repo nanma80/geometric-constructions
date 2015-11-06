@@ -12,11 +12,11 @@ class Task
     layouts = [ initial_layout ]
     moves.each_with_index do |move, move_index|
       is_last_move = (move_index == moves.length - 1)
-      puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
+      puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}" if verbose
       new_layouts = []
       layouts.each_with_index do |layout, layout_index|
         if layout_index % 100 == 0
-          puts "Processed #{layout_index}/#{layouts.length} layouts in this round"
+          puts "Processed #{layout_index}/#{layouts.length} layouts in this round" if verbose
         end
         layout.each_outcome(move) do |outcome|
           unless is_last_move
@@ -24,7 +24,7 @@ class Task
           end
           
           if outcome.contains?(targets)
-            puts "Found a solution"
+            puts "Found a solution" if verbose
             return outcome
           end
         end
@@ -32,7 +32,11 @@ class Task
       layouts = new_layouts
     end
 
-    puts "Cannot find any layout containing targets"
+    puts "Cannot find any layout containing targets" if verbose
     nil
+  end
+
+  def verbose
+    !ENV['_'].include?('rspec')
   end
 end

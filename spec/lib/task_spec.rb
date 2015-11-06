@@ -41,7 +41,47 @@ describe Task do
     task = Task.new(initial_layout, targets, [:perp_bis, :perp_bis, :circle])
     solution_layout = task.solve
 
-    solution_layout.print(targets)
+    expect(solution_layout).not_to be_nil
+  end
+
+  it 'should construct geometric mean' do
+    short = 1.0
+    long = 2.23
+    geo_mean = Math.sqrt(short * long)
+    center_point = Point.new([0, 0])
+    left_point = Point.new([- short, 0])
+    right_point = Point.new([long, 0])
+    horizontal_line = Line.new([center_point, left_point])
+
+    theta = 34 * Math::PI / 180
+    up_point = Point.new([geo_mean * Math.cos(theta), geo_mean * Math.sin(theta)])
+    line2 = Line.new([center_point, up_point])
+
+    initial_layout = Layout.new([center_point, left_point, right_point], [horizontal_line, line2], [])
+    targets = [up_point]
+
+    steps = [:perp_bis, :perp, :circle]
+
+    task = Task.new(initial_layout, targets, steps)
+
+    solution_layout = task.solve
+
+    expect(solution_layout).not_to be_nil
+  end
+
+  it 'should construct parallelogram' do
+    bottom_left = Point.new([0, 0])
+    top_left = Point.new([1, 2])
+    bottom_right = Point.new([3, 1])
+    targets = [Point.new([4, 3])]
+
+    initial_layout = Layout.new([bottom_left, bottom_right, top_left], [], [])
+
+    steps = [:line, :line, :parallel, :parallel]
+
+    task = Task.new(initial_layout, targets, steps)
+
+    solution_layout = task.solve
 
     expect(solution_layout).not_to be_nil
   end

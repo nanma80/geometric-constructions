@@ -137,6 +137,6 @@ describe Line do
     line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
     point = Point.new([0.5, 0.5])
 
-    expect{ Line.parallel(line, point) }.to raise_error
+    expect{ Line.parallel(line, point) }.to raise_error RuntimeError
   end
 end
