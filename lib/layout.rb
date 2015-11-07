@@ -110,6 +110,14 @@ class Layout
           yield dup_layout
         end
       end
+    when :compass
+      @points.permutation(3).each do |points|
+        dup_layout = dup
+        new_circle = Circle.new(points[0], [points[1], points[2]])
+        next unless new_circle.is_new?(dup_layout)
+        dup_layout.add_entity(new_circle)
+        yield dup_layout
+      end
     else
       raise "#{move} is not supported"
     end

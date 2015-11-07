@@ -49,4 +49,13 @@ describe Circle do
     expect(c1.intersection_with_circle(c2).sort{|point| point.x}).to eq [p1, p2]
   end
 
+  it 'should construct a circle using a non-collapsing compass' do
+    p1 = Point.new([1, 2])
+    p2 = Point.new([4, -2])
+    center = Point.new([0, 1])
+    circle = Circle.new(center, [p1, p2])
+
+    target = Circle.new(center, Point.new([5, 1]))
+    expect(circle).to eq target
+  end
 end

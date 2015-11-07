@@ -1,12 +1,20 @@
 class Circle < Entity
   attr_reader :center, :radius
 
-  def initialize(center, point)
+  def initialize(center, params)
     super
     @center = center
-    @radius = get_radius(point)
-    definition[:is_centered_at] = [ center ]
-    definition[:passes] = [ point ]
+    if params.is_a?(Point)
+      point = params
+      @radius = get_radius(center, point)
+      definition[:is_centered_at] = [ center ]
+      definition[:passes] = [ point ]
+    else
+      points = params
+      @radius = get_radius(points[0], points[1])
+      definition[:is_centered_at] = [ center ]
+      definition[:radius_is_the_distance_between] = points
+    end
   end
 
   def description
@@ -62,10 +70,10 @@ class Circle < Entity
     end
   end
 
-  def get_radius(point)
-    raise if point == center
-    dx = center.x - point.x
-    dy = center.y - point.y
+  def get_radius(p1, p2)
+    raise if p1 == p2
+    dx = p1.x - p2.x
+    dy = p1.y - p2.y
 
     Math.sqrt(dx * dx + dy * dy)
   end
