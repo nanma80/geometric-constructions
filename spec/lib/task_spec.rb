@@ -10,8 +10,10 @@ describe Task do
 
     initial_layout = Layout.new([point_top, point_left, point_right], [horizontal_line], [])
     targets = [vertical_line]
+    filters = {2 => [Point.new([0, -1])]}
 
-    task = Task.new(initial_layout, targets, [:circle, :circle, :line])
+    task = Task.new(initial_layout, targets, [:circle, :circle, :line], filters)
+
     solution_layout = task.solve
 
     expect(solution_layout).not_to be_nil

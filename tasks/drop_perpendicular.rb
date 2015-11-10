@@ -8,8 +8,9 @@ vertical_line = Line.new([point_top, Point.new([0, 2])]) # target. operations: c
 
 initial_layout = Layout.new([point_top, point_left], [horizontal_line], [])
 targets = [vertical_line]
+filters = {2 => [Point.new([0, -1])]}
 
-task = Task.new(initial_layout, targets, [:circle, :circle, :line])
+task = Task.new(initial_layout, targets, [:circle, :circle, :line], filters)
 solution_layout = task.solve
 
 solution_layout.print(targets)
