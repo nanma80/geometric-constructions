@@ -25,7 +25,9 @@ targets = [center]
 
 steps = [:circle, :circle, :line, :circle, :circle, :line]
 
-task = Task.new(initial_layout, targets, steps)
+filters = {3 => [Point.new([xi, xi * Math.tan(theta)])]}
+
+task = Task.new(initial_layout, targets, steps, filters)
 
 solution_layout = task.solve
 
