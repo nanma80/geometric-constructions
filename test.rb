@@ -25,7 +25,12 @@ targets = [center]
 
 steps = [:circle, :circle, :line, :circle, :circle, :line]
 
+filter_distance = Math.cos(theta - point_theta) * point_distance
+filter_point = Point.new([filter_distance * Math.cos(theta), filter_distance * Math.sin(theta)])
+
+# filters = {3 => [filter_point]}
 filters = {3 => [Point.new([xi, xi * Math.tan(theta)])]}
+# filters = {}
 
 task = Task.new(initial_layout, targets, steps, filters)
 
