@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Line do
   it 'should compute normal form' do
     p1 = Point.new([-2, 0])
-    p2 = Point.new([0, 2])
+    p2 = Point.new([10.0**(-15), 2])
     p3 = Point.new([0, 0])
     p4 = Point.new([-2, 2])
     
@@ -95,4 +95,48 @@ describe Line do
     expect(l1.intersection_with_line(l2)).to eq [Point.new([1, 2])]
   end
 
+  it 'should create perpendicular bisector - example 1' do
+    l1 = Line.perp_bis([Point.new([0, 0]), Point.new([1, 1])])
+    l2 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+
+    expect(l1).to eq l2
+  end
+
+  it 'should create perpendicular bisector - example 2' do
+    l1 = Line.perp_bis([Point.new([0, 1.0]), Point.new([0, -1.0])])
+    l2 = Line.new([Point.new([1, 0]), Point.new([2, 0])])
+
+    expect(l1).to eq l2
+  end
+
+  it 'should create a perpendicular line - example 1' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([1, 0])
+    perpendicular = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+
+    expect(Line.perp(line, point)).to eq perpendicular
+  end
+
+  it 'should create a perpendicular line - example 2' do
+    line = Line.new([Point.new([0, 0]), Point.new([3, 4])])
+    point = Point.new([0, 0])
+    perpendicular = Line.new([Point.new([0, 0]), Point.new([-4, 3])])
+
+    expect(Line.perp(line, point)).to eq perpendicular
+  end
+
+  it 'should create parallel line' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([1, 0])
+    parallel = Line.new([Point.new([1, 0]), Point.new([2, 1])])
+
+    expect(Line.parallel(line, point)).to eq parallel
+  end
+
+  it 'should not create parallel line when point is in the line' do
+    line = Line.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([0.5, 0.5])
+
+    expect{ Line.parallel(line, point) }.to raise_error RuntimeError
+  end
 end

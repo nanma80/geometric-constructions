@@ -16,6 +16,21 @@ describe Point do
     expect(point1).not_to eq point3
   end
 
+  it 'should check if on a line' do
+    line = Line.new([Point.new([0, 2]), Point.new([2, 0])])
+    p_online1 = Point.new([1, 1])
+    p_online2 = Point.new([1.5, 0.5])
+    p_offline = Point.new([0.5, 0.5])
+
+    expect(p_online1.on_line?(line)).to be true
+    expect(p_online2.on_line?(line)).to be true
+    expect(p_offline.on_line?(line)).to be false
+
+    expect(line.contains?(p_online1)).to be true
+    expect(line.contains?(p_online2)).to be true
+    expect(line.contains?(p_offline)).to be false
+  end
+
   it 'should check if it is new in a layout' do
     layout = Layout.new([Point.new([1, 2]), Point.new([2, 3]), Point.new([3, 4])])
     old_point = Point.new([4.0/2, 1.0 + 2.0])

@@ -1,19 +1,39 @@
+# Circle in angle with E moves
 require './geometric-constructions'
 
-center = Point.new([0, -1])
-circle_top = Point.new([0, 0.34])
-circle = Circle.new(center, circle_top)
+origin = Point.new([0, 0])
+theta = 26 * Math::PI / 180
+point_theta = 14 * Math::PI / 180
 
-point_left = Point.new([-1.3, 0])
-point_right = Point.new([1.763, 0])
+upper_ray_distance = 2.23
+lower_ray_distance = 2.26
+point_distance = 1.0
 
-hidden_line = Line.new([point_left, point_right])
+upper_ray = Line.new([origin, Point.new([upper_ray_distance * Math.cos(theta), upper_ray_distance * Math.sin(theta)])])
+lower_ray = Line.new([origin, Point.new([lower_ray_distance * Math.cos(- theta), lower_ray_distance * Math.sin(- theta)])])
+bisector = Line.new([origin, Point.new([10, 0])])
+point = Point.new([point_distance * Math.cos(point_theta), point_distance * Math.sin(point_theta)])
 
-targets = circle.intersection_with_line(hidden_line)
+xi = point_distance * Math.cos(point_theta)
+zeta = point_distance
+delta = Math.sqrt(xi ** 2.0 - (zeta * Math.cos(theta)) ** 2.0)
+center_x = (xi - delta)/(Math.cos(theta) ** 2.0)
+center = Point.new([center_x, 0])
 
-initial_layout = Layout.new([point_left, point_right, center], [], [circle])
+initial_layout = Layout.new([origin, point], [upper_ray, lower_ray, bisector], [])
+targets = [center]
 
-task = Task.new(initial_layout, targets, [:circle, :circle, :circle, :circle])
+steps = [:circle, :circle, :line, :circle, :circle, :line]
+
+filter_distance = Math.cos(theta - point_theta) * point_distance
+filter_point = Point.new([filter_distance * Math.cos(theta), filter_distance * Math.sin(theta)])
+
+# filters = {3 => [filter_point]}
+filters = {3 => [Point.new([xi, xi * Math.tan(theta)])]}
+# filters = {}
+
+task = Task.new(initial_layout, targets, steps, filters)
+
 solution_layout = task.solve
 
 solution_layout.print(targets)

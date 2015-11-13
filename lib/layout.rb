@@ -131,6 +131,43 @@ class Layout
         dup_layout.add_entity(new_line)
         yield dup_layout
       end
+    when :perp_bis
+      @points.permutation(2).each do |points|
+        dup_layout = dup
+        new_line = Line.perp_bis(points)
+        next unless new_line.is_new?(dup_layout)
+        dup_layout.add_entity(new_line)
+        yield dup_layout
+      end
+    when :perp
+      @lines.each do |line|
+        @points.each do |point|
+          dup_layout = dup
+          new_line = Line.perp(line, point)
+          next unless new_line.is_new?(dup_layout)
+          dup_layout.add_entity(new_line)
+          yield dup_layout
+        end
+      end
+    when :parallel
+      @lines.each do |line|
+        @points.each do |point|
+          next if point.on_line?(line)
+          dup_layout = dup
+          new_line = Line.parallel(line, point)
+          next unless new_line.is_new?(dup_layout)
+          dup_layout.add_entity(new_line)
+          yield dup_layout
+        end
+      end
+    when :compass
+      @points.permutation(3).each do |points|
+        dup_layout = dup
+        new_circle = Circle.new(points[0], [points[1], points[2]])
+        next unless new_circle.is_new?(dup_layout)
+        dup_layout.add_entity(new_circle)
+        yield dup_layout
+      end
     else
       raise "#{move} is not supported"
     end
