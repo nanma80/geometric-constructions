@@ -1,39 +1,28 @@
-# Circle in angle with E moves
+# three segments with E moves
 require './geometric-constructions'
 
 origin = Point.new([0, 0])
-theta = 26 * Math::PI / 180
-point_theta = 14 * Math::PI / 180
+right_bottom = Point.new([1, 0])
+theta_1 = 123 * Math::PI / 180
+theta_2 = 34 * Math::PI / 180
+middle_left_line = Point.new([Math.cos(theta_1), Math.sin(theta_1)])
+top = Point.new([Math.cos(theta_1) + Math.cos(theta_2), Math.sin(theta_1) + Math.sin(theta_2)])
 
-upper_ray_distance = 2.23
-lower_ray_distance = 2.26
-point_distance = 1.0
+bottom_line = Line.new([origin, right_bottom])
+left_line = Line.new([middle_left_line, top])
+left_bottom = bottom_line.intersection_with_line(left_line).first
 
-upper_ray = Line.new([origin, Point.new([upper_ray_distance * Math.cos(theta), upper_ray_distance * Math.sin(theta)])])
-lower_ray = Line.new([origin, Point.new([lower_ray_distance * Math.cos(- theta), lower_ray_distance * Math.sin(- theta)])])
-bisector = Line.new([origin, Point.new([10, 0])])
-point = Point.new([point_distance * Math.cos(point_theta), point_distance * Math.sin(point_theta)])
+initial_layout = Layout.new([left_bottom, top, right_bottom], [left_line, bottom_line], [])
 
-xi = point_distance * Math.cos(point_theta)
-zeta = point_distance
-delta = Math.sqrt(xi ** 2.0 - (zeta * Math.cos(theta)) ** 2.0)
-center_x = (xi - delta)/(Math.cos(theta) ** 2.0)
-center = Point.new([center_x, 0])
+targets = [Point.new([-0.5085100696026763, -2.4994068439781003])] # point from previous solution
 
-initial_layout = Layout.new([origin, point], [upper_ray, lower_ray, bisector], [])
-targets = [center]
+steps = [:circle] * 4 + [:line]
 
-steps = [:circle, :circle, :line, :circle, :circle, :line]
+p steps
 
-filter_distance = Math.cos(theta - point_theta) * point_distance
-filter_point = Point.new([filter_distance * Math.cos(theta), filter_distance * Math.sin(theta)])
-
-# filters = {3 => [filter_point]}
-filters = {3 => [Point.new([xi, xi * Math.tan(theta)])]}
-# filters = {}
-
-task = Task.new(initial_layout, targets, steps, filters)
+task = Task.new(initial_layout, targets, steps)
 
 solution_layout = task.solve
 
 solution_layout.print(targets)
+
