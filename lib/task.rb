@@ -43,7 +43,7 @@ class Task
           end
         end
       end
-      layouts = new_layouts
+      layouts = new_layouts.shuffle
     end
 
     puts "Cannot find any layout containing targets" if verbose
