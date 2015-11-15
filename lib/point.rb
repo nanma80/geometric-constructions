@@ -24,7 +24,7 @@ class Point < Entity
     end
 
     coordinates.each_with_index do |c, index|
-      if (c - that.coordinates[index]).abs > EPSILON
+      if (c - that.coordinates[index]) ** 2 > EPSILON
         return false
       end
     end

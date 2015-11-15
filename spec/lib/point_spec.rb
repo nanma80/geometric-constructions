@@ -16,6 +16,13 @@ describe Point do
     expect(point1).not_to eq point3
   end
 
+  it 'should check for equality 2' do
+    point1 = Point.new([0.5233534553600068, 1.559040598627138])
+    point2 = Point.new([0.5233533967931905, 1.559040685456011])
+
+    expect(point1).to eq point2
+  end
+
   it 'should check if on a line' do
     line = Line.new([Point.new([0, 2]), Point.new([2, 0])])
     p_online1 = Point.new([1, 1])
