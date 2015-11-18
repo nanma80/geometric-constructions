@@ -26,6 +26,7 @@ class Task
       end
 
       is_last_move = (move_index == moves.length - 1)
+      is_last_but_one_move = (move_index == moves.length - 2)
       puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}" if verbose
       new_layouts = []
       layouts.each_with_index do |layout, layout_index|
@@ -34,7 +35,9 @@ class Task
         end
         layout.each_outcome(move) do |outcome|
           unless is_last_move
-            new_layouts << outcome
+            if (!is_last_but_one_move) || (is_last_but_one_move && Random.rand < 0.02)
+              new_layouts << outcome
+            end
           end
           
           if outcome.contains?(targets)
