@@ -1,28 +1,54 @@
-# three segments with E moves
+# orthic triangle. 8E
+# 
+
 require './geometric-constructions'
 
-origin = Point.new([0, 0])
-right_bottom = Point.new([1, 0])
-theta_1 = 123 * Math::PI / 180
-theta_2 = 34 * Math::PI / 180
-middle_left_line = Point.new([Math.cos(theta_1), Math.sin(theta_1)])
-top = Point.new([Math.cos(theta_1) + Math.cos(theta_2), Math.sin(theta_1) + Math.sin(theta_2)])
+left_down = Point.new([-1.0, 0])
+right_down = Point.new([1.852, 0])
+top = Point.new([0, 1.56])
 
-bottom_line = Line.new([origin, right_bottom])
-left_line = Line.new([middle_left_line, top])
-left_bottom = bottom_line.intersection_with_line(left_line).first
 
-initial_layout = Layout.new([left_bottom, top, right_bottom], [left_line, bottom_line], [])
+horizontal = Line.new([left_down, right_down])
+left_line = Line.new([left_down, top])
+right_line = Line.new([right_down, top])
 
-targets = [Point.new([-0.5085100696026763, -2.4994068439781003])] # point from previous solution
+initial_layout = Layout.new([left_down, right_down, top], [horizontal, left_line, right_line], [])
 
-steps = [:circle] * 4 + [:line]
 
-p steps
+down_foot = Line.perp(horizontal, top).intersection_with_line(horizontal).first
+left_foot = Line.perp(left_line, right_down).intersection_with_line(left_line).first
+right_foot = Line.perp(right_line, left_down).intersection_with_line(right_line).first
 
-task = Task.new(initial_layout, targets, steps)
+nine_point_circle_center = Line.perp_bis([down_foot, left_foot]).intersection_with_line(Line.perp_bis([down_foot, right_foot])).first
 
-solution_layout = task.solve
+puts nine_point_circle_center.description
 
-solution_layout.print(targets)
 
+targets = [nine_point_circle_center]
+
+
+step_count = 4
+(0..(2**step_count - 1)).each do |generator|
+  generator += 2 ** step_count
+  generator_seq = generator.to_s(2)[1..-1].split('')
+
+  steps = []
+  generator_seq.each do |ch|
+    if ch == '0'
+      steps << :circle
+    else
+      steps << :line
+    end
+  end
+
+  p [generator - 2 ** step_count, steps]
+  task = Task.new(initial_layout, targets, steps)
+
+  solution_layout = task.solve
+  if not solution_layout.nil?
+    p steps
+
+    solution_layout.print(targets)
+    exit
+  end
+end
