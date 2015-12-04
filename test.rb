@@ -1,54 +1,42 @@
-# orthic triangle. 8E
-# 
-
+# Trying to solve 3 degrees in 6L
 require './geometric-constructions'
 
-left_down = Point.new([-1.0, 0])
-right_down = Point.new([1.852, 0])
-top = Point.new([0, 1.56])
+origin = Point.new([0, 0])
+right_point = Point.new([1, 0])
+horizontal_line = Line.new([origin, right_point])
 
+circle = Circle.new(origin, right_point)
+left_vertical_line = Line.perp_bis([origin, right_point])
 
-horizontal = Line.new([left_down, right_down])
-left_line = Line.new([left_down, top])
-right_line = Line.new([right_down, top])
+golden_section = (1 - (Math.sqrt(5) - 1)/2)
 
-initial_layout = Layout.new([left_down, right_down, top], [horizontal, left_line, right_line], [])
+right_vertical_line = Line.perp_bis([right_point, Point.new([golden_section, 0])])
 
+initial_layout = Layout.new([origin, right_point], [horizontal_line], [circle])
+initial_layout.add_entity(left_vertical_line)
 
-down_foot = Line.perp(horizontal, top).intersection_with_line(horizontal).first
-left_foot = Line.perp(left_line, right_down).intersection_with_line(left_line).first
-right_foot = Line.perp(right_line, left_down).intersection_with_line(right_line).first
+targets = [right_vertical_line]
 
-nine_point_circle_center = Line.perp_bis([down_foot, left_foot]).intersection_with_line(Line.perp_bis([down_foot, right_foot])).first
+# steps = [:compass, :compass, :perp_bis] # original
 
-puts nine_point_circle_center.description
+first_moves = [:line, :circle, :perp_bis, :perp, :parallel, :compass]
+second_moves = [:line, :perp_bis, :perp, :parallel]
 
+first_moves.each do |first_move|
+  second_moves.each do |second_move|
+    steps = [first_move, second_move]
 
-targets = [nine_point_circle_center]
+    task = Task.new(initial_layout, targets, steps)
 
+    solution_layout = task.solve
 
-step_count = 4
-(0..(2**step_count - 1)).each do |generator|
-  generator += 2 ** step_count
-  generator_seq = generator.to_s(2)[1..-1].split('')
+    if not solution_layout.nil?
+      p steps
 
-  steps = []
-  generator_seq.each do |ch|
-    if ch == '0'
-      steps << :circle
-    else
-      steps << :line
+      solution_layout.print(targets)
+      exit
     end
   end
-
-  p [generator - 2 ** step_count, steps]
-  task = Task.new(initial_layout, targets, steps)
-
-  solution_layout = task.solve
-  if not solution_layout.nil?
-    p steps
-
-    solution_layout.print(targets)
-    exit
-  end
 end
+
+
