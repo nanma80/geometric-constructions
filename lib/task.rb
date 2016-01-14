@@ -38,7 +38,7 @@ class Task
           end
           
           if outcome.contains?(targets)
-            puts "Found a solution" if verbose
+            puts "\# Found a solution" if verbose
             return outcome
           end
         end

@@ -3,21 +3,20 @@
 
 require './geometric-constructions'
 
-right_point = Point.new([1, 0])
+right_point = Point.new([1, 0]).with_name('right point')
 origin = Point.new([0, 0])
-circle = Circle.new(origin, right_point)
+circle = Circle.new(origin, right_point).with_name('original circle')
 
 random_angle = 35.7 * Math::PI / 180
-random_point = Point.new([Math.cos(random_angle), Math.sin(random_angle)])
-
+random_point = Point.new([Math.cos(random_angle), Math.sin(random_angle)]).with_name('random point on circle')
 
 initial_layout = Layout.new([right_point, random_point], [], [circle])
 
 left_up = Point.new([- 0.5, Math.sqrt(3.0) * 0.5])
 left_down = Point.new([- 0.5, - Math.sqrt(3.0) * 0.5])
 
-up_line = Line.new([left_up, right_point])
-down_line = Line.new([left_down, right_point])
+up_line = Line.new([left_up, right_point]).with_name('up line')
+down_line = Line.new([left_down, right_point]).with_name('down line')
 
 targets = [up_line, down_line]
 filters = {4 => [up_line]}

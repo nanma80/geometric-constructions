@@ -17,4 +17,11 @@ describe Entity do
 
     expect(point.definition[:is_intersection_of]).to eql [1, 2]
   end
+
+  it 'should have name' do
+    point = Entity.new.with_name('test point')
+
+    expect(point.has_name?).to be true
+    expect(point.name).to eql 'test point'
+  end
 end
