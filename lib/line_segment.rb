@@ -1,0 +1,3 @@
+class LineSegment < Line
+  
+end
