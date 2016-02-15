@@ -9,14 +9,14 @@ right_point = Point.new([1, 0]).with_name('right point')
 horizontal_line = Line.new([left_point, right_point]).with_name('horizontal line')
 left_node = Point.new([1.0/6.0, 0])
 
-# circle = Circle.new(left_point, right_point).with_name('circle centered at the left point')
+circle = Circle.new(left_point, right_point).with_name('circle centered at the left point')
 
-initial_layout = Layout.new([left_point, right_point], [horizontal_line], [])
+initial_layout = Layout.new([left_point, right_point], [horizontal_line], [circle])
 targets = [left_node]
 
-l_moves = [:circle, :line, :perp_bis, :perp, :parallel, :compass]
+l_moves = [:circle, :line, :perp_bis, :perp, :parallel, :angle_bis, :compass]
 
-step_count = 4
+step_count = 3
 generator_max = l_moves.length ** step_count
 
 (0..(generator_max - 1)).each do |generator|

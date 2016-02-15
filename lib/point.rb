@@ -37,7 +37,7 @@ class Point < Entity
   end
 
   def on_line?(line)
-    (x * Math.cos(line.norm_direction) + y * Math.sin(line.norm_direction) - line.origin_distance).abs < EPSILON
+    (x * Math.cos(line.norm_direction) + y * Math.sin(line.norm_direction) - line.origin_distance) ** 2 < EPSILON
   end
 
   def find_same(layout)

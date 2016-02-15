@@ -128,6 +128,7 @@ class Layout
       end
     when :angle_bis
       @points.permutation(3).each do |points|
+        next if points[0].on_line?(Line.new([points[1], points[2]]))
         dup_layout = dup
         new_line = Line.angle_bis(points[0], [points[1], points[2]])
         next unless new_line.is_new?(dup_layout)
