@@ -1,5 +1,5 @@
 class Line < Entity
-  attr_reader :normal_form
+  attr_reader :normal_form, :points
 
   def initialize(params)
     super
@@ -25,6 +25,10 @@ class Line < Entity
 
   def norm_direction
     normal_form[0]
+  end
+
+  def colinear_with?(that)
+    self == that
   end
 
   def ==(that)
@@ -70,7 +74,7 @@ class Line < Entity
   end
 
   def intersection_with_line(that)
-    if self == that
+    if (self == that)  && (!that.is_a?(LineSegment)) && (!self.is_a?(LineSegment))
       raise 'Cannot find intersection with the same line'
     end
 
@@ -90,6 +94,11 @@ class Line < Entity
     inter_y = (p2 * Math.cos(a1) - p1 * Math.cos(a2))/Math.sin(- a12)
 
     intersection = Point.new([inter_x, inter_y])
+
+    if that.is_a?(LineSegment) && !(that.contains?(intersection))
+      return []
+    end
+
     intersection.definition[:is_intersection_of] = [self, that]
     [intersection]
   end

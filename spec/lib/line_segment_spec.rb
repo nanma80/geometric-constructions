@@ -22,18 +22,50 @@ describe LineSegment do
     l1 = LineSegment.new([Point.new([0, 1]), Point.new([2, -1])])
     l2 = LineSegment.new([Point.new([3, -2]), Point.new([1, 0])])
     l3 = LineSegment.new([Point.new([1, -2]), Point.new([1, 0])])
+    l1_same = LineSegment.new([Point.new([0, 1]), Point.new([2, -1])])
+    l1_swap = LineSegment.new([Point.new([2, -1]), Point.new([0, 1])])
 
-    expect(l1).to eq l2
+
+    expect(l1).to eq l1_same
+    expect(l1).to eq l1_swap
+
+    expect(l1).not_to eq l2
     expect(l1).not_to eq l3
   end
 
-  it 'should not find intersection with itself' do
+  it 'should check if it contains a point' do
+    line = LineSegment.new([Point.new([0, 1]), Point.new([2, -1])])
+    expect(line.contains?(Point.new([0, 0]))).to be false
+    expect(line.contains?(Point.new([1, 0]))).to be true
+    expect(line.contains?(Point.new([2, -1]))).to be true
+    expect(line.contains?(Point.new([1, 0]))).to be true
+    expect(line.contains?(Point.new([3, -2]))).to be false
+    expect(line.contains?(Point.new([-2, 3]))).to be false
+  end
+
+  it 'should find no intersection with itself' do
     p1 = Point.new([-2, 0])
     p2 = Point.new([0, 2])
     l1 = LineSegment.new([p1, p2])
     l2 = LineSegment.new([p2, p1])
 
-    expect{ l1.intersection_with_line(l2) }.to raise_error RuntimeError
+    expect(l1.intersection_with_line(l2)).to eq []
+  end
+
+  it 'should find no intersection with a line segment' do
+    l1 = LineSegment.new([Point.new([1, 0]), Point.new([0, 1])])
+    l2 = LineSegment.new([Point.new([-1, 0]), Point.new([0, 0])])
+
+    expect(l2.intersection_with_line(l1)).to eq []
+    expect(l1.intersection_with_line(l2)).to eq []
+  end
+
+  it 'should find no intersection with a line' do
+    l1 = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    l2 = LineSegment.new([Point.new([-1, 0]), Point.new([0, 0])])
+
+    expect(l2.intersection_with_line(l1)).to eq []
+    expect(l1.intersection_with_line(l2)).to eq []
   end
 
   it 'should find no intersection with a circle' do
@@ -83,8 +115,18 @@ describe LineSegment do
   it 'should find complicated intersection with a line' do
     l1 = LineSegment.new([Point.new([2, 0]), Point.new([0, 4])])
     l2 = LineSegment.new([Point.new([0, 0]), Point.new([0.5, 1])])
+    l2_longer = LineSegment.new([Point.new([0, 0]), Point.new([2, 4])])
 
-    expect(l1.intersection_with_line(l2)).to eq [Point.new([1, 2])]
+    expect(l1.intersection_with_line(l2)).to eq []
+    expect(l1.intersection_with_line(l2_longer)).to eq [Point.new([1, 2])]
+  end
+
+  it 'should find no intersection with a line it is on' do
+    line_segment = LineSegment.new([Point.new([1, 0]), Point.new([0, 1])])
+    line = Line.new([Point.new([1, 0]), Point.new([0, 1])])
+    
+    expect(line_segment.intersection_with_line(line)).to eq []
+    expect(line.intersection_with_line(line_segment)).to eq []
   end
 
 end
