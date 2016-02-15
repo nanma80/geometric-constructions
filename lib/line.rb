@@ -193,4 +193,22 @@ class Line < Entity
     line
   end
 
+  def self.angle_bis(vertex, points)
+    p1 = points[0]
+    p2 = points[1]
+
+    length1 = vertex.distance_from(p1)
+    length2 = vertex.distance_from(p2)
+
+    lambda = length2 / (length1 + length2)
+    x12 = p1.x * lambda + p2.x * (1 - lambda)
+    y12 = p1.y * lambda + p2.y * (1 - lambda)
+
+    line = Line.new([vertex, Point.new([x12, y12])])
+
+    line.definition.delete(:passes)
+    line.definition[:is_bisector_of_the_angle_specified_by] = [p1, vertex, p2]
+    line
+  end
+
 end

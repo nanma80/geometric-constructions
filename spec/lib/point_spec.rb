@@ -46,4 +46,11 @@ describe Point do
     new_point = Point.new([4, 5])
     expect(new_point.is_new?(layout)).to be true
   end
+
+  it 'should compute distance' do
+    p1 = Point.new([3, 0])
+    p2 = Point.new([0, 4])
+
+    expect( (p1.distance_from(p2) - 5.0).abs < EPSILON ).to be true
+  end
 end

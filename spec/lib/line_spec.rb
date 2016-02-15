@@ -139,4 +139,44 @@ describe Line do
 
     expect{ Line.parallel(line, point) }.to raise_error RuntimeError
   end
+
+  it 'should create angle bisector - easy' do
+    vertex = Point.new([0, 0])
+    point1 = Point.new([1, 0])
+    point2 = Point.new([0, 1])
+
+    bisector = Line.new([vertex, Point.new([1, 1])])
+
+    expect(Line.angle_bis(vertex, [point1, point2])).to eq bisector
+  end
+
+  it 'should create angle bisector - harder' do
+    vertex = Point.new([0, 0])
+    point1 = Point.new([1, 0])
+    point2 = Point.new([0, 1.35])
+
+    bisector = Line.new([vertex, Point.new([1, 1])])
+    bisector_computed = Line.angle_bis(vertex, [point1, point2])
+    expect(bisector_computed).to eq bisector
+  end
+
+  it 'should create angle bisector if vertex is on extension of p1 p2' do
+    vertex = Point.new([0, 0])
+    point1 = Point.new([1, 2])
+    point2 = Point.new([3, 6])
+
+    bisector = Line.new([vertex, point1])
+
+    expect(Line.angle_bis(vertex, [point1, point2])).to eq bisector
+  end
+
+  it 'should not create angle bisector by colinear points' do
+    point1 = Point.new([0, 0])
+    vertex = Point.new([1, 2])
+    point2 = Point.new([3, 6])
+
+    bisector = Line.new([vertex, Point.new([1, 0])])
+
+    expect{ Line.angle_bis(vertex, [point1, point2])}.to raise_error RuntimeError
+  end
 end
