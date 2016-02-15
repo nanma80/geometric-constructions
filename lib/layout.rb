@@ -126,6 +126,14 @@ class Layout
         dup_layout.add_entity(new_circle)
         yield dup_layout
       end
+    when :angle_bis
+      @points.permutation(3).each do |points|
+        dup_layout = dup
+        new_line = Line.angle_bis(points[0], [points[1], points[2]])
+        next unless new_line.is_new?(dup_layout)
+        dup_layout.add_entity(new_line)
+        yield dup_layout
+      end
     else
       raise "#{move} is not supported"
     end

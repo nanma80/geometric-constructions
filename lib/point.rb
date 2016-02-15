@@ -18,6 +18,10 @@ class Point < Entity
     coordinates[1]
   end
 
+  def distance_from(that)
+    Math.sqrt((that.x - x) ** 2 + (that.y - y) ** 2)
+  end
+
   def ==(that)
     unless that.is_a?(Point)
       raise "Comparing #{that.inspect} to a point"
