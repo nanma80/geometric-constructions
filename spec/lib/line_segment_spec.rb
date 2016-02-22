@@ -129,4 +129,20 @@ describe LineSegment do
     expect(line.intersection_with_line(line_segment)).to eq []
   end
 
+  it 'should create parallel line' do
+    line_segment = LineSegment.new([Point.new([0, 0]), Point.new([1, 1])])
+    point = Point.new([1, 0])
+    parallel = Line.new([Point.new([1, 0]), Point.new([2, 1])])
+
+    expect(Line.parallel(line_segment, point)).to eq parallel
+  end
+
+  it 'should create a perpendicular line' do
+    line_segment = LineSegment.new([Point.new([0, 0]), Point.new([3, 4])])
+    point = Point.new([0, 0])
+    perpendicular = Line.new([Point.new([0, 0]), Point.new([-4, 3])])
+
+    expect(Line.perp(line_segment, point)).to eq perpendicular
+  end
+
 end
