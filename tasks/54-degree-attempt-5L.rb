@@ -17,18 +17,20 @@ initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
 targets = [line2]
 
 l_moves = [:circle, :line, :perp_bis, :perp, :parallel, :angle_bis, :compass]
+line_moves = [:line, :perp_bis, :perp, :parallel, :angle_bis]
 
 step_count = 5
 generator_max = l_moves.length ** step_count
 
-(41..(generator_max - 1)).each do |generator|
+(133..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(l_moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
     steps << l_moves[step_id.to_i]
   end
   p [generator, steps]
-  next unless steps.include?(:line) || steps.include?(:perp_bis) || steps.include?(:angle_bis)
+  next unless steps.include?(:angle_bis) # official tweet announced that we needed angle bis
+  next unless line_moves.include?(steps.last)
 
   task = Task.new(initial_layout, targets, steps)
 
