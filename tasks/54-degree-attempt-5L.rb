@@ -22,7 +22,7 @@ line_moves = [:line, :perp_bis, :perp, :parallel, :angle_bis]
 step_count = 5
 generator_max = l_moves.length ** step_count
 
-(133..(generator_max - 1)).each do |generator|
+(251..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(l_moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
