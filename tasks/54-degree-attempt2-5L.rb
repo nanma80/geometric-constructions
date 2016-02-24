@@ -1,8 +1,5 @@
 # Trying 10.4 54 deg in 5L
-# Tried to the middle of 133
-# [285, [:circle, :circle, :angle_bis, :angle_bis, :angle_bis]] is too slow. skip
-# Also skipping [292, [:circle, :circle, :angle_bis, :compass, :angle_bis]] because its too slow
-# [330, [:circle, :circle, :compass, :angle_bis, :line]] half done
+# add the golden ratio point as a filter
 
 require './geometric-constructions'
 
@@ -17,6 +14,10 @@ up_point = Point.new([up_distance * Math.cos(theta), up_distance * Math.sin(thet
 line2 = Line.new([center_point, up_point])
 
 initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
+filters = {
+  # 1 => [Circle.new(right_point, center_point)],
+  4 => [Point.new([(3-Math.sqrt(5))/2, 0])]
+}
 targets = [line2]
 
 l_moves = [:circle, :line, :perp_bis, :perp, :parallel, :angle_bis, :compass]
@@ -25,7 +26,7 @@ line_moves = [:line, :perp_bis, :perp, :parallel, :angle_bis]
 step_count = 5
 generator_max = l_moves.length ** step_count
 
-(330..(generator_max - 1)).each do |generator|
+(0..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(l_moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
@@ -35,7 +36,7 @@ generator_max = l_moves.length ** step_count
   next unless steps.include?(:angle_bis) # official tweet announced that we needed angle bis
   next unless line_moves.include?(steps.last)
 
-  task = Task.new(initial_layout, targets, steps)
+  task = Task.new(initial_layout, targets, steps, filters)
 
   solution_layout = task.solve
 
