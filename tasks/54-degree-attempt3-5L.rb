@@ -1,6 +1,7 @@
 # Trying 10.4 54 deg in 5L
 # add the golden ratio point as a filter
 # stopped in the middle of 7190. Processed 24100/35200 layouts in this round
+# This one should work
 
 require './geometric-constructions'
 
@@ -17,7 +18,6 @@ line2 = Line.new([center_point, up_point])
 initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
 initial_layout << Line.new([Point.new([0.5, 0]), Point.new([0.5, 1])])
 initial_layout << Circle.new(Point.new([0.5, 0]), Point.new([0.5, 1]))
-initial_layout << Circle.new(Point.new([1.5, 0]), Point.new([1.5 - Math.sqrt(5) * 0.5, 0]))
 
 filters = {
 }
@@ -26,7 +26,7 @@ targets = [line2]
 l_moves = [:circle, :line, :perp_bis, :perp, :parallel, :angle_bis, :compass]
 line_moves = [:line, :perp_bis, :perp, :parallel, :angle_bis]
 
-step_count = 2
+step_count = 3
 generator_max = l_moves.length ** step_count
 
 (0..(generator_max - 1)).each do |generator|
@@ -36,7 +36,7 @@ generator_max = l_moves.length ** step_count
     steps << l_moves[step_id.to_i]
   end
   Logger.log [generator, steps].inspect
-  # next unless steps.include?(:angle_bis) # official tweet announced that we needed angle bis
+  next unless steps.include?(:angle_bis) # official tweet announced that we needed angle bis
   next unless line_moves.include?(steps.last)
 
   task = Task.new(initial_layout, targets, steps, filters)
