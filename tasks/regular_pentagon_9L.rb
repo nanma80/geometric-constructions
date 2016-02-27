@@ -1,6 +1,6 @@
 # regular pentagon
 # We learned that it's impossible to establish a circle in 4L that is centered at (0, -1) and passing bottom_point
-# We learned that it's impossbiel to establish up_right vertex in 4L
+# We learned that it's impossible to establish up_right vertex in 4L
 
 require './geometric-constructions'
 

@@ -1,7 +1,5 @@
 # Trying 10.4 54 deg in 5L
-# add the golden ratio point as a filter
-# stopped in the middle of 7190. Processed 24100/35200 layouts in this round
-# This one should work
+# still too slow
 
 require './geometric-constructions'
 
@@ -29,7 +27,7 @@ line_moves = [:line, :perp_bis, :perp, :parallel, :angle_bis]
 step_count = 3
 generator_max = l_moves.length ** step_count
 
-(0..(generator_max - 1)).each do |generator|
+(48..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(l_moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
