@@ -9,7 +9,9 @@ class Task
     @filters = filters || {}
   end
 
-  def solve
+  def solve(options = nil)
+    options ||= {}
+    subsample_rate = options[:subsample_rate] || 1.0
     layouts = [ initial_layout ]
     moves.each_with_index do |move, move_index|
       if @filters.has_key?(move_index)
@@ -35,7 +37,7 @@ class Task
         end
         layout.each_outcome(move) do |outcome|
           unless is_last_move
-            if (!is_last_but_one_move) || (is_last_but_one_move && Random.rand < 0.2)
+            if (!is_last_but_one_move) || (is_last_but_one_move && Random.rand <= subsample_rate)
               new_layouts << outcome
             end
           end
