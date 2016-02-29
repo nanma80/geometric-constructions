@@ -30,12 +30,12 @@ class Task
       Logger.log "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
       new_layouts = []
       layouts.each_with_index do |layout, layout_index|
-        if layout_index % 100 == 0
+        if layout_index % 10 == 0
           Logger.log "Processed #{layout_index}/#{layouts.length} layouts in this round"
         end
         layout.each_outcome(move) do |outcome|
           unless is_last_move
-            if (!is_last_but_one_move) || (is_last_but_one_move && Random.rand < 0.02)
+            if (!is_last_but_one_move) || (is_last_but_one_move && Random.rand < 0.2)
               new_layouts << outcome
             end
           end

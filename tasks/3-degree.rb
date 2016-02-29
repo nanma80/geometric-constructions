@@ -1,6 +1,7 @@
 # Trying 10.9 3-degree for 7E
 # What we have learned:
 # 7E not possible if we follow old path (54 deg) until finishing golden circle
+# 7E unlikely (20% checked) if we follow old path (54 deg) until finishing connecting line
 
 require './geometric-constructions'
 
