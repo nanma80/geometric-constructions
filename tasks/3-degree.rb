@@ -29,7 +29,7 @@ initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
 initial_layout << right_circle
 initial_layout << left_circle
 initial_layout << big_right_circle
-initial_layout << connecting_line
+# initial_layout << connecting_line
 # initial_layout << golden_circle
 
 targets = [line2]
@@ -40,24 +40,23 @@ filters = {}
 step_count = 3
 generator_max = moves.length ** step_count
 
-(2..(generator_max - 1)).each do |generator|
+(0..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
     steps << moves[step_id.to_i]
   end
   Logger.log "\e[33m#{[generator, steps].inspect}\e[0m"
-  next unless steps.last == :line
 
   task = Task.new(initial_layout, targets, steps, filters)
 
-  solution_layout = task.solve
-
-  if solution_layout.nil?
-  else
-    puts "\# *************Found solution*************"
-    puts '# ' + steps.inspect
-    solution_layout.print(targets)
-    exit
+  task.each_layout do |layout|
+    layout.points.each do |point|
+      if point.x > EPSILON && (point.y.abs/point.x - Math.tan(theta)).abs < EPSILON
+        puts "Found a solution"
+        layout.print([point])
+        exit
+      end
+    end
   end
 end

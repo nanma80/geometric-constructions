@@ -129,4 +129,36 @@ describe Task do
     solution_layout = task.solve(subsample_rate: 0.0)
     expect(solution_layout).to be_nil
   end
+
+  it 'should construct 60 deg angle using custom checker' do
+    solution_count = 0
+    center_point = Point.new([0, 0]).with_name("vertex of ray")
+    right_point = Point.new([1, 0]).with_name("arbitrary point on ray")
+    very_right_point = Point.new([10000000.0, 0])
+    horizontal_line = LineSegment.new([center_point, very_right_point]).with_name("ray")
+
+    up_distance = 2.23
+    theta = 60 * Math::PI / 180
+    up_point = Point.new([up_distance * Math.cos(theta), up_distance * Math.sin(theta)])
+    line2 = Line.new([center_point, up_point])
+
+    initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
+
+    targets = [line2]
+
+    steps = [:circle, :circle]
+
+    task = Task.new(initial_layout, targets, steps)
+
+    task.each_layout do |layout|
+      layout.points.each do |point|
+        if point.x > EPSILON && (point.y.abs/point.x - Math.tan(theta)).abs < EPSILON
+          solution_count += 1
+          next
+        end
+      end
+    end
+
+    expect(solution_count > 0).to be true
+  end
 end

@@ -9,11 +9,14 @@ class Task
     @filters = filters || {}
   end
 
-  def solve(options = nil)
+  def each_layout(options = nil)
     options ||= {}
     subsample_rate = options[:subsample_rate] || 1.0
     layouts = [ initial_layout ]
     moves.each_with_index do |move, move_index|
+      is_last_move = (move_index == moves.length - 1)
+      is_last_but_one_move = (move_index == moves.length - 2)
+
       if @filters.has_key?(move_index)
         Logger.log "Filtering layouts before Move #{move_index}: #{move}. Before count: #{layouts.length}"
         filtered_layouts = []
@@ -27,8 +30,6 @@ class Task
         Logger.log "Filtering layouts before Move #{move_index}: #{move}. After count: #{layouts.length}"
       end
 
-      is_last_move = (move_index == moves.length - 1)
-      is_last_but_one_move = (move_index == moves.length - 2)
       Logger.log "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
       new_layouts = []
       layouts.each_with_index do |layout, layout_index|
@@ -41,14 +42,20 @@ class Task
               new_layouts << outcome
             end
           end
-          
-          if outcome.contains?(targets)
-            Logger.log "Found a solution"
-            return outcome
-          end
+
+          yield outcome, move_index, new_layouts
         end
       end
       layouts = new_layouts.shuffle
+    end
+  end
+
+  def solve(options = nil)
+    each_layout(options) do |layout|
+      if layout.contains?(targets)
+        Logger.log "Found a solution"
+        return layout
+      end
     end
 
     Logger.log "Cannot find any layout containing targets"
