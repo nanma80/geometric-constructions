@@ -18,6 +18,10 @@ class Point < Entity
     coordinates[1]
   end
 
+  def distance_from(that)
+    Math.sqrt((that.x - x) ** 2 + (that.y - y) ** 2)
+  end
+
   def ==(that)
     unless that.is_a?(Point)
       raise "Comparing #{that.inspect} to a point"
@@ -33,7 +37,7 @@ class Point < Entity
   end
 
   def on_line?(line)
-    (x * Math.cos(line.norm_direction) + y * Math.sin(line.norm_direction) - line.origin_distance).abs < EPSILON
+    (x * Math.cos(line.norm_direction) + y * Math.sin(line.norm_direction) - line.origin_distance) ** 2 < EPSILON
   end
 
   def find_same(layout)

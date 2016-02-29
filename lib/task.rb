@@ -13,7 +13,7 @@ class Task
     layouts = [ initial_layout ]
     moves.each_with_index do |move, move_index|
       if @filters.has_key?(move_index)
-        puts "Filtering layouts before Move #{move_index}: #{move}. Before count: #{layouts.length}" if verbose
+        Logger.log "Filtering layouts before Move #{move_index}: #{move}. Before count: #{layouts.length}"
         filtered_layouts = []
         filter_entities = @filters[move_index]
         layouts.each_with_index do |layout, layout_index|
@@ -22,16 +22,16 @@ class Task
           end
         end
         layouts = filtered_layouts
-        puts "Filtering layouts before Move #{move_index}: #{move}. After count: #{layouts.length}" if verbose
+        Logger.log "Filtering layouts before Move #{move_index}: #{move}. After count: #{layouts.length}"
       end
 
       is_last_move = (move_index == moves.length - 1)
       is_last_but_one_move = (move_index == moves.length - 2)
-      puts "Move #{move_index}: #{move}. Layout count: #{layouts.length}" if verbose
+      Logger.log "Move #{move_index}: #{move}. Layout count: #{layouts.length}"
       new_layouts = []
       layouts.each_with_index do |layout, layout_index|
         if layout_index % 100 == 0
-          puts "Processed #{layout_index}/#{layouts.length} layouts in this round" if verbose
+          Logger.log "Processed #{layout_index}/#{layouts.length} layouts in this round"
         end
         layout.each_outcome(move) do |outcome|
           unless is_last_move
@@ -41,7 +41,7 @@ class Task
           end
           
           if outcome.contains?(targets)
-            puts "Found a solution" if verbose
+            Logger.log "Found a solution"
             return outcome
           end
         end
@@ -49,11 +49,7 @@ class Task
       layouts = new_layouts.shuffle
     end
 
-    puts "Cannot find any layout containing targets" if verbose
+    Logger.log "Cannot find any layout containing targets"
     nil
-  end
-
-  def verbose
-    !ENV['_'].include?('rspec')
   end
 end

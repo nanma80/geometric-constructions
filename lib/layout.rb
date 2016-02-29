@@ -31,15 +31,23 @@ class Layout
   end
 
   def print(targets)
-    puts "Layout has #{points.length} points; #{lines.length} lines; #{circles.length} circles"
+    puts "\# Layout has #{points.length} points; #{lines.length} lines; #{circles.length} circles"
     targets.each do |target|
       target_in_layout = target.find_same(self)
       target_in_layout.print
-      puts "#{target_in_layout.class} \##{target_in_layout.id} is a target"
+      target_claim = "\# #{target_in_layout.class} \##{target_in_layout.id} is a target"
+      if target.has_name?
+        target_claim += ", the #{target.name}"
+      end
+      puts target_claim
     end
   end
 
   def add_entity(new_entity)
+    self << new_entity
+  end
+
+  def <<(new_entity)
     lines.each do |line|
       new_entity.intersection_with_line(line).each do |point|
         next unless point.is_new?(self)
@@ -116,6 +124,15 @@ class Layout
         new_circle = Circle.new(points[0], [points[1], points[2]])
         next unless new_circle.is_new?(dup_layout)
         dup_layout.add_entity(new_circle)
+        yield dup_layout
+      end
+    when :angle_bis
+      @points.permutation(3).each do |points|
+        next if points[0].on_line?(Line.new([points[1], points[2]]))
+        dup_layout = dup
+        new_line = Line.angle_bis(points[0], [points[1], points[2]])
+        next unless new_line.is_new?(dup_layout)
+        dup_layout.add_entity(new_line)
         yield dup_layout
       end
     else

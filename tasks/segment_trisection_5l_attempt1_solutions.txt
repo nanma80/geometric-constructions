@@ -1,0 +1,2061 @@
+nma@C02JL01KDKQ4 geometric-constructions (master)$ ruby test.rb 
+[0, [:circle, :circle, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 120
+Processed 0/120 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :circle, :circle, :circle]
+# Layout has 15 points; 1 lines; 4 circles
+# Line #0 is predefined. Norm direction: 90.0. Distance to origin: 0.0
+# Point #1 is predefined. Coordinates: (1.0, 0.0)
+# Point #2 is predefined. Coordinates: (0.0, 0.0)
+# Circle #3 is centered at Point #1 and passes Point #2. Center: (1.0, 0.0). Radius: 1.0
+# Point #4 is intersection of Line #0, Circle #3. Coordinates: (2.0, -1.2246467991473532e-16)
+# Circle #5 is centered at Point #4 and passes Point #2. Center: (2.0, -1.2246467991473532e-16). Radius: 2.0
+# Point #6 is intersection of Line #0, Circle #5. Coordinates: (4.0, -2.4492935982947064e-16)
+# Circle #7 is centered at Point #6 and passes Point #1. Center: (4.0, -2.4492935982947064e-16). Radius: 3.0
+# Point #8 is intersection of Circle #7, Circle #3. Coordinates: (1.1666666666666665, 0.9860132971832694)
+# Circle #9 is centered at Point #8 and passes Point #4. Center: (1.1666666666666665, 0.9860132971832694). Radius: 1.2909944487358058
+# Point #10 is intersection of Line #0, Circle #9. Coordinates: (0.3333333333333329, -1.1102230246251565e-16)
+# Point #10 is a target
+[1, [:circle, :circle, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 120
+Processed 0/120 layouts in this round
+Processed 100/120 layouts in this round
+Cannot find any layout containing targets
+[2, [:circle, :circle, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 120
+Processed 0/120 layouts in this round
+Processed 100/120 layouts in this round
+Cannot find any layout containing targets
+[3, [:circle, :circle, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 120
+Processed 0/120 layouts in this round
+Processed 100/120 layouts in this round
+Cannot find any layout containing targets
+[4, [:circle, :circle, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 120
+Processed 0/120 layouts in this round
+Processed 100/120 layouts in this round
+Cannot find any layout containing targets
+[5, [:circle, :circle, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 120
+Processed 0/120 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :circle, :circle, :compass]
+# Layout has 15 points; 1 lines; 4 circles
+# Circle #11 is centered at Point #2 and passes Point #1. Center: (0.0, 0.0). Radius: 1.0
+# Point #12 is intersection of Line #0, Circle #11. Coordinates: (-1.0, 6.123233995736766e-17)
+# Circle #13 is centered at Point #1 and passes Point #12. Center: (1.0, 0.0). Radius: 2.0
+# Point #14 is intersection of Line #0, Circle #13. Coordinates: (3.0, -1.8369701987210297e-16)
+# Circle #15 is centered at Point #14 and passes Point #2. Center: (3.0, -1.8369701987210297e-16). Radius: 3.0
+# Point #16 is intersection of Circle #15, Circle #11. Coordinates: (0.16666666666666652, 0.9860132971832694)
+# Circle #17 is centered at Point #16 and radius is the distance between Point #2, Point #1. Center: (0.16666666666666652, 0.9860132971832694). Radius: 1.0
+# Point #18 is intersection of Line #0, Circle #17. Coordinates: (0.33333333333333315, 0.0)
+# Point #18 is a target
+[6, [:circle, :circle, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[7, [:circle, :circle, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[8, [:circle, :circle, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[9, [:circle, :circle, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[10, [:circle, :circle, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[11, [:circle, :circle, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 72
+Processed 0/72 layouts in this round
+Cannot find any layout containing targets
+[12, [:circle, :circle, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 160
+Processed 0/160 layouts in this round
+Processed 100/160 layouts in this round
+Cannot find any layout containing targets
+[13, [:circle, :circle, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 160
+Processed 0/160 layouts in this round
+Processed 100/160 layouts in this round
+Cannot find any layout containing targets
+[14, [:circle, :circle, :perp_bis, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 160
+Processed 0/160 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :circle, :perp_bis, :perp_bis]
+# Layout has 15 points; 3 lines; 2 circles
+# Circle #19 is centered at Point #2 and passes Point #1. Center: (0.0, 0.0). Radius: 1.0
+# Point #20 is intersection of Line #0, Circle #19. Coordinates: (-1.0, 6.123233995736766e-17)
+# Line #21 is perpendicular bisector of Point #1, Point #2. Norm direction: 0.0. Distance to origin: 0.5
+# Circle #22 is centered at Point #20 and passes Point #1. Center: (-1.0, 6.123233995736766e-17). Radius: 2.0
+# Point #23 is intersection of Line #21, Circle #22. Coordinates: (0.5, -1.3228756555322954)
+# Line #24 is perpendicular bisector of Point #20, Point #23. Norm direction: 318.5903778907291. Distance to origin: 0.25
+# Point #25 is intersection of Line #24, Line #0. Coordinates: (0.33333333333333354, -2.041077998578923e-17)
+# Point #25 is a target
+[15, [:circle, :circle, :perp_bis, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 160
+Processed 0/160 layouts in this round
+Processed 100/160 layouts in this round
+Cannot find any layout containing targets
+[16, [:circle, :circle, :perp_bis, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 160
+Processed 0/160 layouts in this round
+Processed 100/160 layouts in this round
+Cannot find any layout containing targets
+[17, [:circle, :circle, :perp_bis, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 160
+Processed 0/160 layouts in this round
+Processed 100/160 layouts in this round
+Cannot find any layout containing targets
+[18, [:circle, :circle, :perp, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[19, [:circle, :circle, :perp, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[20, [:circle, :circle, :perp, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[21, [:circle, :circle, :perp, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[22, [:circle, :circle, :perp, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[23, [:circle, :circle, :perp, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 40
+Processed 0/40 layouts in this round
+Cannot find any layout containing targets
+[24, [:circle, :circle, :parallel, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[25, [:circle, :circle, :parallel, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[26, [:circle, :circle, :parallel, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[27, [:circle, :circle, :parallel, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[28, [:circle, :circle, :parallel, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[29, [:circle, :circle, :parallel, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Cannot find any layout containing targets
+[30, [:circle, :circle, :compass, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: circle. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[31, [:circle, :circle, :compass, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: line. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[32, [:circle, :circle, :compass, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp_bis. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[33, [:circle, :circle, :compass, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: perp. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[34, [:circle, :circle, :compass, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: parallel. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[35, [:circle, :circle, :compass, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: circle. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 8
+Processed 0/8 layouts in this round
+Move 3: compass. Layout count: 528
+Processed 0/528 layouts in this round
+Processed 100/528 layouts in this round
+Processed 200/528 layouts in this round
+Processed 300/528 layouts in this round
+Processed 400/528 layouts in this round
+Processed 500/528 layouts in this round
+Cannot find any layout containing targets
+[36, [:circle, :line, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[37, [:circle, :line, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[38, [:circle, :line, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[39, [:circle, :line, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[40, [:circle, :line, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[41, [:circle, :line, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[42, [:circle, :line, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[43, [:circle, :line, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[44, [:circle, :line, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[45, [:circle, :line, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[46, [:circle, :line, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[47, [:circle, :line, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[48, [:circle, :line, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[49, [:circle, :line, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[50, [:circle, :line, :perp_bis, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[51, [:circle, :line, :perp_bis, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[52, [:circle, :line, :perp_bis, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[53, [:circle, :line, :perp_bis, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[54, [:circle, :line, :perp, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[55, [:circle, :line, :perp, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[56, [:circle, :line, :perp, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[57, [:circle, :line, :perp, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[58, [:circle, :line, :perp, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[59, [:circle, :line, :perp, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[60, [:circle, :line, :parallel, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[61, [:circle, :line, :parallel, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[62, [:circle, :line, :parallel, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[63, [:circle, :line, :parallel, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[64, [:circle, :line, :parallel, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[65, [:circle, :line, :parallel, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[66, [:circle, :line, :compass, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[67, [:circle, :line, :compass, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[68, [:circle, :line, :compass, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[69, [:circle, :line, :compass, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[70, [:circle, :line, :compass, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[71, [:circle, :line, :compass, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: line. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[72, [:circle, :perp_bis, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[73, [:circle, :perp_bis, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[74, [:circle, :perp_bis, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 272
+Processed 0/272 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :perp_bis, :circle, :perp_bis]
+# Layout has 15 points; 3 lines; 2 circles
+# Circle #26 is centered at Point #2 and passes Point #1. Center: (0.0, 0.0). Radius: 1.0
+# Point #27 is intersection of Line #0, Circle #26. Coordinates: (-1.0, 6.123233995736766e-17)
+# Line #28 is perpendicular bisector of Point #2, Point #1. Norm direction: 0.0. Distance to origin: 0.5
+# Circle #29 is centered at Point #27 and passes Point #1. Center: (-1.0, 6.123233995736766e-17). Radius: 2.0
+# Point #30 is intersection of Line #28, Circle #29. Coordinates: (0.5, -1.3228756555322954)
+# Line #31 is perpendicular bisector of Point #27, Point #30. Norm direction: 318.5903778907291. Distance to origin: 0.25
+# Point #32 is intersection of Line #31, Line #0. Coordinates: (0.33333333333333354, -2.041077998578923e-17)
+# Point #32 is a target
+[75, [:circle, :perp_bis, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[76, [:circle, :perp_bis, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[77, [:circle, :perp_bis, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[78, [:circle, :perp_bis, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[79, [:circle, :perp_bis, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[80, [:circle, :perp_bis, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[81, [:circle, :perp_bis, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[82, [:circle, :perp_bis, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[83, [:circle, :perp_bis, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 128
+Processed 0/128 layouts in this round
+Processed 100/128 layouts in this round
+Cannot find any layout containing targets
+[84, [:circle, :perp_bis, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[85, [:circle, :perp_bis, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[86, [:circle, :perp_bis, :perp_bis, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 272
+Processed 0/272 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :perp_bis, :perp_bis, :perp_bis]
+# Layout has 13 points; 4 lines; 1 circles
+# Circle #33 is centered at Point #2 and passes Point #1. Center: (0.0, 0.0). Radius: 1.0
+# Point #34 is intersection of Line #0, Circle #33. Coordinates: (-1.0, 6.123233995736766e-17)
+# Line #35 is perpendicular bisector of Point #2, Point #34. Norm direction: 180.0. Distance to origin: 0.5
+# Point #36 is intersection of Line #35, Circle #33. Coordinates: (-0.5000000000000001, -0.8660254037844385)
+# Line #37 is perpendicular bisector of Point #36, Point #2. Norm direction: 239.99999999999997. Distance to origin: 0.5
+# Point #38 is intersection of Line #37, Line #35. Coordinates: (-0.5, -0.2886751345948127)
+# Point #39 is intersection of Line #37, Circle #33. Coordinates: (0.49999999999999944, -0.8660254037844388)
+# Line #40 is perpendicular bisector of Point #38, Point #39. Norm direction: 329.99999999999994. Distance to origin: 0.28867513459481287
+# Point #41 is intersection of Line #40, Line #0. Coordinates: (0.3333333333333334, -2.0410779985789225e-17)
+# Point #41 is a target
+[87, [:circle, :perp_bis, :perp_bis, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 272
+Processed 0/272 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :perp_bis, :perp_bis, :perp]
+# Layout has 11 points; 4 lines; 1 circles
+# Line #42 is perpendicular bisector of Point #1, Point #2. Norm direction: 0.0. Distance to origin: 0.5
+# Circle #43 is centered at Point #2 and passes Point #1. Center: (0.0, 0.0). Radius: 1.0
+# Point #44 is intersection of Line #42, Circle #43. Coordinates: (0.5, -0.8660254037844386)
+# Line #45 is perpendicular bisector of Point #44, Point #2. Norm direction: 300.00000000000006. Distance to origin: 0.5
+# Point #46 is intersection of Line #45, Line #42. Coordinates: (0.5, -0.2886751345948129)
+# Line #47 is perpendicular to Line #45 and passes Point #46. Norm direction: 29.99999999999998. Distance to origin: 0.2886751345948129
+# Point #48 is intersection of Line #47, Line #0. Coordinates: (0.3333333333333333, -2.041077998578922e-17)
+# Point #48 is a target
+[88, [:circle, :perp_bis, :perp_bis, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[89, [:circle, :perp_bis, :perp_bis, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 272
+Processed 0/272 layouts in this round
+Processed 100/272 layouts in this round
+Processed 200/272 layouts in this round
+Cannot find any layout containing targets
+[90, [:circle, :perp_bis, :perp, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[91, [:circle, :perp_bis, :perp, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[92, [:circle, :perp_bis, :perp, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[93, [:circle, :perp_bis, :perp, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[94, [:circle, :perp_bis, :perp, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[95, [:circle, :perp_bis, :perp, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[96, [:circle, :perp_bis, :parallel, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[97, [:circle, :perp_bis, :parallel, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[98, [:circle, :perp_bis, :parallel, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[99, [:circle, :perp_bis, :parallel, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[100, [:circle, :perp_bis, :parallel, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[101, [:circle, :perp_bis, :parallel, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[102, [:circle, :perp_bis, :compass, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 1168
+Processed 0/1168 layouts in this round
+Processed 100/1168 layouts in this round
+Processed 200/1168 layouts in this round
+Processed 300/1168 layouts in this round
+Processed 400/1168 layouts in this round
+Processed 500/1168 layouts in this round
+Processed 600/1168 layouts in this round
+Processed 700/1168 layouts in this round
+Processed 800/1168 layouts in this round
+Processed 900/1168 layouts in this round
+Processed 1000/1168 layouts in this round
+Processed 1100/1168 layouts in this round
+Cannot find any layout containing targets
+[103, [:circle, :perp_bis, :compass, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 1168
+Processed 0/1168 layouts in this round
+Processed 100/1168 layouts in this round
+Processed 200/1168 layouts in this round
+Processed 300/1168 layouts in this round
+Processed 400/1168 layouts in this round
+Processed 500/1168 layouts in this round
+Processed 600/1168 layouts in this round
+Processed 700/1168 layouts in this round
+Processed 800/1168 layouts in this round
+Processed 900/1168 layouts in this round
+Processed 1000/1168 layouts in this round
+Processed 1100/1168 layouts in this round
+Cannot find any layout containing targets
+[104, [:circle, :perp_bis, :compass, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 1168
+Processed 0/1168 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :perp_bis, :compass, :perp_bis]
+# Layout has 18 points; 3 lines; 2 circles
+# Circle #49 is centered at Point #1 and passes Point #2. Center: (1.0, 0.0). Radius: 1.0
+# Point #50 is intersection of Line #0, Circle #49. Coordinates: (2.0, -1.2246467991473532e-16)
+# Line #51 is perpendicular bisector of Point #1, Point #2. Norm direction: 0.0. Distance to origin: 0.5
+# Point #52 is intersection of Line #51, Circle #49. Coordinates: (0.5, -0.8660254037844386)
+# Circle #53 is centered at Point #2 and radius is the distance between Point #52, Point #50. Center: (0.0, 0.0). Radius: 1.7320508075688772
+# Point #54 is intersection of Line #51, Circle #53. Coordinates: (0.5, -1.6583123951776997)
+# Line #55 is perpendicular bisector of Point #50, Point #54. Norm direction: 47.869585238633384. Distance to origin: 0.22360679774997919
+# Point #56 is intersection of Line #55, Line #0. Coordinates: (0.3333333333333336, -2.0410779985789238e-17)
+# Point #56 is a target
+[105, [:circle, :perp_bis, :compass, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 1168
+Processed 0/1168 layouts in this round
+Processed 100/1168 layouts in this round
+Processed 200/1168 layouts in this round
+Processed 300/1168 layouts in this round
+Processed 400/1168 layouts in this round
+Processed 500/1168 layouts in this round
+Processed 600/1168 layouts in this round
+Processed 700/1168 layouts in this round
+Processed 800/1168 layouts in this round
+Processed 900/1168 layouts in this round
+Processed 1000/1168 layouts in this round
+Processed 1100/1168 layouts in this round
+Cannot find any layout containing targets
+[106, [:circle, :perp_bis, :compass, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 1168
+Processed 0/1168 layouts in this round
+Processed 100/1168 layouts in this round
+Processed 200/1168 layouts in this round
+Processed 300/1168 layouts in this round
+Processed 400/1168 layouts in this round
+Processed 500/1168 layouts in this round
+Processed 600/1168 layouts in this round
+Processed 700/1168 layouts in this round
+Processed 800/1168 layouts in this round
+Processed 900/1168 layouts in this round
+Processed 1000/1168 layouts in this round
+Processed 1100/1168 layouts in this round
+Cannot find any layout containing targets
+[107, [:circle, :perp_bis, :compass, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp_bis. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 1168
+Processed 0/1168 layouts in this round
+Processed 100/1168 layouts in this round
+Processed 200/1168 layouts in this round
+Processed 300/1168 layouts in this round
+Processed 400/1168 layouts in this round
+Processed 500/1168 layouts in this round
+Processed 600/1168 layouts in this round
+Processed 700/1168 layouts in this round
+Processed 800/1168 layouts in this round
+Processed 900/1168 layouts in this round
+Processed 1000/1168 layouts in this round
+Processed 1100/1168 layouts in this round
+Cannot find any layout containing targets
+[108, [:circle, :perp, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[109, [:circle, :perp, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[110, [:circle, :perp, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[111, [:circle, :perp, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[112, [:circle, :perp, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[113, [:circle, :perp, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 48
+Processed 0/48 layouts in this round
+Cannot find any layout containing targets
+[114, [:circle, :perp, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[115, [:circle, :perp, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[116, [:circle, :perp, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[117, [:circle, :perp, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[118, [:circle, :perp, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[119, [:circle, :perp, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[120, [:circle, :perp, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[121, [:circle, :perp, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[122, [:circle, :perp, :perp_bis, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[123, [:circle, :perp, :perp_bis, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[124, [:circle, :perp, :perp_bis, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[125, [:circle, :perp, :perp_bis, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 56
+Processed 0/56 layouts in this round
+Cannot find any layout containing targets
+[126, [:circle, :perp, :perp, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[127, [:circle, :perp, :perp, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[128, [:circle, :perp, :perp, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[129, [:circle, :perp, :perp, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[130, [:circle, :perp, :perp, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[131, [:circle, :perp, :perp, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[132, [:circle, :perp, :parallel, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[133, [:circle, :perp, :parallel, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[134, [:circle, :perp, :parallel, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[135, [:circle, :perp, :parallel, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[136, [:circle, :perp, :parallel, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[137, [:circle, :perp, :parallel, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 16
+Processed 0/16 layouts in this round
+Cannot find any layout containing targets
+[138, [:circle, :perp, :compass, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: circle. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[139, [:circle, :perp, :compass, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: line. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[140, [:circle, :perp, :compass, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp_bis. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[141, [:circle, :perp, :compass, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: perp. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[142, [:circle, :perp, :compass, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: parallel. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[143, [:circle, :perp, :compass, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: perp. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 6
+Processed 0/6 layouts in this round
+Move 3: compass. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[144, [:circle, :parallel, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[145, [:circle, :parallel, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[146, [:circle, :parallel, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[147, [:circle, :parallel, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[148, [:circle, :parallel, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[149, [:circle, :parallel, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[150, [:circle, :parallel, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[151, [:circle, :parallel, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[152, [:circle, :parallel, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[153, [:circle, :parallel, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[154, [:circle, :parallel, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[155, [:circle, :parallel, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[156, [:circle, :parallel, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[157, [:circle, :parallel, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[158, [:circle, :parallel, :perp_bis, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[159, [:circle, :parallel, :perp_bis, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[160, [:circle, :parallel, :perp_bis, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[161, [:circle, :parallel, :perp_bis, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[162, [:circle, :parallel, :perp, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[163, [:circle, :parallel, :perp, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[164, [:circle, :parallel, :perp, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[165, [:circle, :parallel, :perp, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[166, [:circle, :parallel, :perp, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[167, [:circle, :parallel, :perp, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[168, [:circle, :parallel, :parallel, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[169, [:circle, :parallel, :parallel, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[170, [:circle, :parallel, :parallel, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[171, [:circle, :parallel, :parallel, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[172, [:circle, :parallel, :parallel, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[173, [:circle, :parallel, :parallel, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: parallel. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[174, [:circle, :parallel, :compass, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: circle. Layout count: 0
+Cannot find any layout containing targets
+[175, [:circle, :parallel, :compass, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: line. Layout count: 0
+Cannot find any layout containing targets
+[176, [:circle, :parallel, :compass, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: perp_bis. Layout count: 0
+Cannot find any layout containing targets
+[177, [:circle, :parallel, :compass, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: perp. Layout count: 0
+Cannot find any layout containing targets
+[178, [:circle, :parallel, :compass, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: parallel. Layout count: 0
+Cannot find any layout containing targets
+[179, [:circle, :parallel, :compass, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: parallel. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: compass. Layout count: 0
+Move 3: compass. Layout count: 0
+Cannot find any layout containing targets
+[180, [:circle, :compass, :circle, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+Processed 200/240 layouts in this round
+Cannot find any layout containing targets
+[181, [:circle, :compass, :circle, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+Processed 200/240 layouts in this round
+Cannot find any layout containing targets
+[182, [:circle, :compass, :circle, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+# Found a solution
+*************Found solution*************
+[:circle, :compass, :circle, :perp_bis]
+# Layout has 15 points; 2 lines; 3 circles
+# Circle #57 is centered at Point #1 and passes Point #2. Center: (1.0, 0.0). Radius: 1.0
+# Point #58 is intersection of Line #0, Circle #57. Coordinates: (2.0, -1.2246467991473532e-16)
+# Circle #59 is centered at Point #1 and radius is the distance between Point #2, Point #58. Center: (1.0, 0.0). Radius: 2.0
+# Point #60 is intersection of Line #0, Circle #59. Coordinates: (-1.0, 6.123233995736766e-17)
+# Point #61 is intersection of Line #0, Circle #59. Coordinates: (3.0, -1.8369701987210297e-16)
+# Circle #62 is centered at Point #61 and passes Point #1. Center: (3.0, -1.8369701987210297e-16). Radius: 2.0
+# Point #63 is intersection of Circle #62, Circle #57. Coordinates: (1.25, 0.9682458365518541)
+# Line #64 is perpendicular bisector of Point #60, Point #63. Norm direction: 23.2837317211051. Distance to origin: 0.3061862178478973
+# Point #65 is intersection of Line #64, Line #0. Coordinates: (0.33333333333333337, -2.0410779985789222e-17)
+# Point #65 is a target
+[183, [:circle, :compass, :circle, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+Processed 200/240 layouts in this round
+Cannot find any layout containing targets
+[184, [:circle, :compass, :circle, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+Processed 200/240 layouts in this round
+Cannot find any layout containing targets
+[185, [:circle, :compass, :circle, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: circle. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 240
+Processed 0/240 layouts in this round
+Processed 100/240 layouts in this round
+Processed 200/240 layouts in this round
+Cannot find any layout containing targets
+[186, [:circle, :compass, :line, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[187, [:circle, :compass, :line, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[188, [:circle, :compass, :line, :perp_bis]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp_bis. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[189, [:circle, :compass, :line, :perp]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: perp. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[190, [:circle, :compass, :line, :parallel]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: parallel. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[191, [:circle, :compass, :line, :compass]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: line. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: compass. Layout count: 144
+Processed 0/144 layouts in this round
+Processed 100/144 layouts in this round
+Cannot find any layout containing targets
+[192, [:circle, :compass, :perp_bis, :circle]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: circle. Layout count: 304
+Processed 0/304 layouts in this round
+Processed 100/304 layouts in this round
+Processed 200/304 layouts in this round
+Processed 300/304 layouts in this round
+Cannot find any layout containing targets
+[193, [:circle, :compass, :perp_bis, :line]]
+Move 0: circle. Layout count: 1
+Processed 0/1 layouts in this round
+Move 1: compass. Layout count: 2
+Processed 0/2 layouts in this round
+Move 2: perp_bis. Layout count: 12
+Processed 0/12 layouts in this round
+Move 3: line. Layout count: 304
+Processed 0/304 layouts in this round
+Processed 100/304 layouts in this round
+^C/Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:21:in `initialize_dup': Interrupt
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:21:in `dup'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:21:in `dup'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:86:in `block in each_outcome'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:85:in `permutation'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:85:in `each'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/layout.rb:85:in `each_outcome'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:35:in `block (2 levels) in solve'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:31:in `each'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:31:in `each_with_index'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:31:in `block in solve'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:14:in `each'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:14:in `each_with_index'
+  from /Users/nma/Documents/testProject/geometric-constructions/lib/task.rb:14:in `solve'
+  from test.rb:28:in `block in <main>'
+  from test.rb:18:in `each'
+  from test.rb:18:in `<main>'
+
+nma@C02JL01KDKQ4 geometric-constructions (master)$ 
+nma@C02JL01KDKQ4 geometric-constructions (master)$ 
+nma@C02JL01KDKQ4 geometric-constructions (master)$ 
+nma@C02JL01KDKQ4 geometric-constructions (master)$ 

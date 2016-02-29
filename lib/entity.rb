@@ -10,6 +10,19 @@ class Entity
   def description
   end
 
+  def with_name(name)
+    definition[:name] = [name]
+    self
+  end
+
+  def has_name?
+    definition.has_key?(:name)
+  end
+
+  def name
+    definition[:name].first
+  end
+
   def is_predefined?
     definition.has_key?(:is_predefined)
   end
@@ -18,7 +31,12 @@ class Entity
     predicate = ''
 
     if is_predefined?
-      predicate = ' is predefined'
+      if has_name?
+        predicate += " is the #{name}"
+      else
+        predicate = ' is predefined'
+      end
+
     else
       definition.each do |verb, entities|
         unless predicate.empty?
@@ -40,7 +58,7 @@ class Entity
     end
 
     set_id
-    puts "#{self.class} \##{id}#{predicate}. #{description}"
+    puts "\# #{self.class} \##{id}#{predicate}. #{description}"
   end
 
   def set_id
