@@ -18,6 +18,7 @@ line2 = Line.new([center_point, up_point])
 right_circle = Circle.new(right_point, center_point).with_name('right circle')
 left_circle = Circle.new(center_point, right_point).with_name('left circle')
 big_right_circle = Circle.new(Point.new([2, 0]), center_point).with_name('big right circle')
+right_circle_2 = Circle.new(Point.new([2, 0]), right_point).with_name('further right circle')
 
 up_intersection = left_circle.intersection_with_circle(right_circle).select{|p| p.y > 0}.first
 down_intersection = left_circle.intersection_with_circle(big_right_circle).select{|p| p.y < 0}.first
@@ -28,19 +29,20 @@ golden_circle = Circle.new(Point.new([2, 0]), golden_point).with_name('golden ci
 initial_layout = Layout.new([center_point, right_point], [horizontal_line], [])
 initial_layout << right_circle
 initial_layout << left_circle
-initial_layout << big_right_circle
+# initial_layout << big_right_circle
 # initial_layout << connecting_line
 # initial_layout << golden_circle
+# initial_layout << right_circle_2
 
 targets = [line2]
 
 moves = [:circle, :line]
 filters = {}
 
-step_count = 3
+step_count = 4
 generator_max = moves.length ** step_count
 
-(0..(generator_max - 1)).each do |generator|
+(6..(generator_max - 1)).each do |generator|
   steps = []
   generator_string = (generator + generator_max).to_s(moves.length)[1..step_count]
   generator_string.split('').each do |step_id|
@@ -50,7 +52,7 @@ generator_max = moves.length ** step_count
 
   task = Task.new(initial_layout, targets, steps, filters)
 
-  task.each_layout do |layout|
+  task.each_layout(subsample_rate: 0.4) do |layout|
     layout.points.each do |point|
       if point.x > EPSILON && (point.y.abs/point.x - Math.tan(theta)).abs < EPSILON
         puts "Found a solution"
@@ -59,4 +61,5 @@ generator_max = moves.length ** step_count
       end
     end
   end
+  puts "No solution found"
 end
