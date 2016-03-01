@@ -18,7 +18,7 @@ class Circle < Entity
   end
 
   def description
-    "Center: (#{center.x}, #{center.y}). Radius: #{radius}"
+    "Center: (#{FLOAT_DISPLAY % center.x}, #{FLOAT_DISPLAY % center.y}). Radius: #{FLOAT_DISPLAY % radius}"
   end
 
   def ==(that)

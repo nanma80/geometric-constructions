@@ -16,7 +16,7 @@ class Line < Entity
   end
 
   def description
-    "Norm direction: #{norm_direction * 180/Math::PI}. Distance to origin: #{origin_distance}"
+    "Norm direction: #{FLOAT_DISPLAY % (norm_direction * 180/Math::PI)}. Distance to origin: #{FLOAT_DISPLAY % origin_distance}"
   end
 
   def origin_distance

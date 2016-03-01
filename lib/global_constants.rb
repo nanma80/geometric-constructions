@@ -1,1 +1,2 @@
 EPSILON = 10.0 ** (-13)
+FLOAT_DISPLAY = '%.5f'

@@ -7,7 +7,7 @@ class Point < Entity
   end
 
   def description
-    "Coordinates: (#{x}, #{y})"
+    "Coordinates: (#{FLOAT_DISPLAY % x}, #{FLOAT_DISPLAY % y})"
   end
 
   def x
