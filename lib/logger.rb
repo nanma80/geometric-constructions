@@ -6,6 +6,6 @@ class Logger
   end
 
   def self.verbose
-    !ENV['_'].include?('rspec')
+    ENV['_'].nil? || !ENV['_'].include?('rspec')
   end
 end
