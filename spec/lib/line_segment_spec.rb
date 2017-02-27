@@ -145,4 +145,12 @@ describe LineSegment do
     expect(Line.perp(line_segment, point)).to eq perpendicular
   end
 
+  it 'should not equal to a line' do
+    line_segment = LineSegment.new([Point.new([0, 0]), Point.new([3, 4])])
+    line = Line.new([Point.new([0, 0]), Point.new([3, 4])])
+    
+    expect(line == line_segment).to be false
+    expect(line_segment == line).to be false
+  end
+
 end

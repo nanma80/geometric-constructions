@@ -36,7 +36,7 @@ class Line < Entity
       raise "Comparing #{that.inspect} to a line"
     end
 
-    Point.new(normal_form) == Point.new(that.normal_form)
+    self.class.name == that.class.name && Point.new(normal_form) == Point.new(that.normal_form)
   end
 
   def contains?(point)
