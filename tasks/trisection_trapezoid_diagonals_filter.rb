@@ -1,5 +1,5 @@
-# 8.8 5E attempt
-# try to use 4E to get two points with the target height
+# 8.8 5E
+# Assume that first three moves creates p_cross2
 
 require './geometric-constructions'
 
@@ -26,14 +26,28 @@ initial_layout = Layout.new(
   [ld_point, rd_point, lu_point, ru_point],
   [top_line, bottom_line, left_line, right_line, cross_line1], 
   [])
-initial_layout << cross_line2
+
+initial_layout << cross_line2 # generate central crossing point automatically
 
 bottom_mid_point = Point.new([bottom_width / 2.0, 0])
 target_height = Line.new([bottom_mid_point, lu_point]).intersection_with_line(cross_line2).first.y
 target_line = Line.new([Point.new([1, target_height]), Point.new([0, target_height])])
 targets = [target_line]
 
-filters = {}
+p_left = left_line.intersection_with_line(target_line).first
+p_cross1 = cross_line1.intersection_with_line(target_line).first
+p_cross2 = cross_line2.intersection_with_line(target_line).first
+p_right = right_line.intersection_with_line(target_line).first
+
+puts p_cross2.x - p_left.x
+puts p_cross1.x - p_cross2.x
+puts p_right.x - p_cross1.x
+
+# exit
+
+filters = {
+  3 => [ p_cross2 ]
+}
 
 step_count = 4
 moves = [:line, :circle]
@@ -52,7 +66,7 @@ generator_max = moves.length ** step_count
   
   task = Task.new(layout, targets, steps, filters)
 
-  task.each_layout(print_interval: 100, subsample_rate:0.3) do |layout|
+  task.each_layout(print_interval: 100, subsample_rate:1.0) do |layout|
     point1 = nil
     layout.points.each do |point|
       if (point.y - target_height).abs < EPSILON
@@ -76,18 +90,18 @@ end
 puts "No solution found"
 
 # Layout has 15 points; 9 lines; 1 circles
-# Point #0 is the left down. Coordinates: (0.00000, 0.00000)
-# Point #1 is the left up. Coordinates: (0.84000, 1.83200)
-# Point #2 is the right up. Coordinates: (1.95500, 1.83200)
-# Line #3 passes Point #1, Point #2. Norm direction: 90.00000. Distance to origin: 1.83200
-# Circle #4 is centered at Point #2 and passes Point #1. Center: (1.95500, 1.83200). Radius: 1.11500
-# Point #5 is intersection of Line #3, Circle #4. Coordinates: (3.07000, 1.83200)
-# Line #6 passes Point #0, Point #5. Norm direction: 300.82633. Distance to origin: 0.00000
-# LineSegment #7 is the lu rd cross line. Norm direction: 45.48068. Distance to origin: 1.89521
-# Point #8 is intersection of Line #6, LineSegment #7. Coordinates: (1.68218, 1.00383)
+# Point #0 is the left up. Coordinates: (0.84000, 1.83200)
+# Point #1 is the right up. Coordinates: (1.95500, 1.83200)
+# Line #2 passes Point #0, Point #1. Norm direction: 90.00000. Distance to origin: 1.83200
+# Circle #3 is centered at Point #0 and passes Point #1. Center: (0.84000, 1.83200). Radius: 1.11500
+# Point #4 is intersection of Line #2, Circle #3. Coordinates: (-0.27500, 1.83200)
+# Point #5 is the right down. Coordinates: (2.70300, 0.00000)
+# Line #6 passes Point #4, Point #5. Norm direction: 58.40109. Distance to origin: 1.41629
+# LineSegment #7 is the ru ld cross line. Norm direction: 313.13971. Distance to origin: 0.00000
+# Point #8 is intersection of Line #6, LineSegment #7. Coordinates: (1.07123, 1.00383)
 # Point #8 is a target
 # Point #9 is predefined. Coordinates: (1.38407, 1.29699)
-# Line #10 passes Point #9, Point #5. Norm direction: 107.60628. Distance to origin: 0.81759
-# LineSegment #11 is the left line. Norm direction: 335.36782. Distance to origin: 0.00000
-# Point #12 is intersection of Line #10, LineSegment #11. Coordinates: (0.46027, 1.00383)
+# Line #10 passes Point #9, Point #4. Norm direction: 72.12661. Distance to origin: 1.65918
+# LineSegment #11 is the right line. Norm direction: 22.21004. Distance to origin: 2.50245
+# Point #12 is intersection of Line #10, LineSegment #11. Coordinates: (2.29314, 1.00383)
 # Point #12 is a target
